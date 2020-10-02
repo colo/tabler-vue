@@ -1,0 +1,66 @@
+<template>
+  <q-layout>
+    <vertical-nav-bar v-if="navbar.available === true" :right="navbar.right" :dark="darkNavBar"/>
+    <!-- :right="true" :dark="false" -->
+
+    <div class="page">
+      <b-navbar toggleable="md" :type="(darkTopBar === true) ? 'dark' : 'light'" tag="header" v-if="topbar.available === true" class="d-none d-lg-flex">
+        <top-bar :combined="topbar.combined" :dark="darkTopBar" :fluid="fluid" :vertical="true"/>
+      </b-navbar>
+
+      <q-page-container>
+        <router-view />
+      </q-page-container>
+    </div>
+
+  </q-layout>
+
+</template>
+
+<script>
+import Vue from 'vue'
+
+import Layout from '@mixins/Layout'
+
+import VerticalNavBar from 'components/VerticalNavBar'
+
+export default Vue.extend({
+  name: 'MainLayout',
+  mixins: [Layout],
+
+  components: {
+    VerticalNavBar,
+  },
+  props: {
+    topbar: {
+      type: Object,
+      default: function () {
+        return {
+          available: true,
+          combined: true,
+          dark: false
+        }
+      }
+    },
+    navbar: {
+      type: Object,
+      default: function () {
+        return {
+          available: true,
+          right: false,
+          dark: true
+        }
+      }
+    },
+    // fluid: {
+    //   type: Boolean,
+    //   default: true
+    // }
+  },
+  data () {
+    return {
+    }
+  },
+
+})
+</script>
