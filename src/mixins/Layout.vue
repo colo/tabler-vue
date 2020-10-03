@@ -1,5 +1,6 @@
 <script>
 import Vue from 'vue'
+
 import { mapActions, mapState } from 'vuex'
 
 import TopBar from 'components/TopBar'
@@ -50,7 +51,7 @@ export default Vue.extend({
       // menuAutoExpand: state => state.layout.menuAutoExpand
       dark: state => state.layout.dark,
       fluid: state => state.layout.fluid,
-      mode: state => state.layout.mode
+      mode: state => state.layout.mode,
     }),
 
     // dark: {

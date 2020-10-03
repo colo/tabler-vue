@@ -1,6 +1,6 @@
 <template>
   <div id="q-app">
-    <component :is="this.mode || this.$route.meta.layout || 'div'">
+    <component :is="this.mode || this.$route.meta.layout">
       <router-view />
     </component>
   </div>
@@ -15,7 +15,7 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
-// import { mapState } from 'vuex'
+import { mapActions } from 'vuex'
 
 /**
 * Dynamic Layout
@@ -39,12 +39,30 @@ export default {
     // }),
     mode: {
       get () {
-        return this.$store.state.layout.mode
+        if (!this.$store.state.layout.mode || this.$store.state.layout.mode === undefined) {
+          return false
+        } else {
+          return this.$store.state.layout.mode
+        }
       },
       set (value) {
-        this.setLayout({ layout: value })
+        this.setMode({ mode: value })
       }
     }
-  }
+  },
+  created: function () {
+    // console.log('created', this.mode, this.$route)
+    if (this.mode === false) { this.mode = 'VerticalLayout' }
+  },
+  mounted: function () {
+    // console.log('mounted', this.mode, this.$route)
+    if (this.mode === false) { this.mode = 'VerticalLayout' }
+  },
+  methods: {
+    ...mapActions({
+      setMode: 'layout/setMode',
+    }),
+
+  },
 }
 </script>

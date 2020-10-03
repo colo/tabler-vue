@@ -15,8 +15,8 @@
           stacked
         > -->
             <b-form-checkbox plain class="form-switch" v-model="dark">Dark Mode</b-form-checkbox>
-            <b-form-checkbox :disabled="disabledNavBar" plain class="form-switch">Dark Nav Bar</b-form-checkbox>
-            <b-form-checkbox :disabled="disabledTopBar" plain class="form-switch">Dark Top Bar</b-form-checkbox>
+            <b-form-checkbox :disabled="disabledNavBar" v-model="darkNavbar" plain class="form-switch">Dark Nav Bar</b-form-checkbox>
+            <b-form-checkbox :disabled="disabledTopBar" v-model="darkTopbar" plain class="form-switch">Dark Top Bar</b-form-checkbox>
         <!-- </b-form-checkbox-group> -->
       </b-form-group>
 
@@ -120,6 +120,36 @@ export default {
     }
   },
   computed: {
+    darkNavbar: {
+      get () {
+        // console.log(this.$store.state.layout.fluid)
+        let mode = this.$store.state.layout.mode
+        return this.$store.state.layout[mode].navbar.dark
+      },
+      set (value) {
+        let mode = this.$store.state.layout.mode
+        let layout = JSON.parse(JSON.stringify(this.$store.state.layout[mode]))// create a copy to avoid "Error: [vuex] do not mutate vuex store state outside mutation handlers."
+        layout.navbar.dark = value
+        let payload = {}
+        payload[mode] = layout
+        this.$store.dispatch('layout/set' + mode, payload)
+      }
+    },
+    darkTopbar: {
+      get () {
+        // console.log(this.$store.state.layout.fluid)
+        let mode = this.$store.state.layout.mode
+        return this.$store.state.layout[mode].topbar.dark
+      },
+      set (value) {
+        let mode = this.$store.state.layout.mode
+        let layout = JSON.parse(JSON.stringify(this.$store.state.layout[mode]))// create a copy to avoid "Error: [vuex] do not mutate vuex store state outside mutation handlers."
+        layout.topbar.dark = value
+        let payload = {}
+        payload[mode] = layout
+        this.$store.dispatch('layout/set' + mode, payload)
+      }
+    },
     disabledNavBar: function () {
       return this.dark
     },
@@ -136,7 +166,6 @@ export default {
     },
     mode: {
       get () {
-        console.log(this.$store.state.layout.mode)
         return this.$store.state.layout.mode
       },
       set (value) {
@@ -145,7 +174,6 @@ export default {
     },
     fluid: {
       get () {
-        console.log(this.$store.state.layout.fluid)
         return this.$store.state.layout.fluid
       },
       set (value) {

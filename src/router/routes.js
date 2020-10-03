@@ -4,7 +4,7 @@
 * Dynamic Layout
 * https://dev.to/lampewebdev/vuejs-pages-with-dynamic-layouts-problems-and-a-solution-4460
 */
-import VerticalLayout from '../layouts/VerticalLayout.vue'
+// import VerticalLayout from '../layouts/VerticalLayout.vue'
 
 const routes = [
   {
@@ -14,7 +14,7 @@ const routes = [
     //   { path: '', component: () => import('pages/Index.vue') }
     // ]
     component: () => import('pages/Index.vue'),
-    meta: { layout: VerticalLayout }
+    meta: { layout: 'VerticalLayout' }
   },
 
   // Always leave this as last one,

@@ -20,6 +20,8 @@
 <script>
 import Vue from 'vue'
 
+import { mapActions, mapState } from 'vuex'
+
 import Layout from '@mixins/Layout'
 
 import VerticalNavBar from 'components/VerticalNavBar'
@@ -31,31 +33,39 @@ export default Vue.extend({
   components: {
     VerticalNavBar,
   },
-  props: {
-    topbar: {
-      type: Object,
-      default: function () {
-        return {
-          available: true,
-          combined: true,
-          dark: false
-        }
-      }
-    },
-    navbar: {
-      type: Object,
-      default: function () {
-        return {
-          available: true,
-          right: false,
-          dark: true
-        }
-      }
-    },
-    // fluid: {
-    //   type: Boolean,
-    //   default: true
-    // }
+  // props: {
+  //   topbar: {
+  //     type: Object,
+  //     default: function () {
+  //       return {
+  //         available: true,
+  //         combined: true,
+  //         dark: false
+  //       }
+  //     }
+  //   },
+  //   navbar: {
+  //     type: Object,
+  //     default: function () {
+  //       return {
+  //         available: true,
+  //         right: false,
+  //         dark: true
+  //       }
+  //     }
+  //   },
+  //   // fluid: {
+  //   //   type: Boolean,
+  //   //   default: true
+  //   // }
+  // },
+  computed: {
+    ...mapState({
+      navbar: state => state.layout.VerticalLayout.navbar,
+      topbar: state => state.layout.VerticalLayout.topbar,
+      fluid: state => state.layout.fluid,
+    }),
+
   },
   data () {
     return {

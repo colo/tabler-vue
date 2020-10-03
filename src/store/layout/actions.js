@@ -9,6 +9,13 @@ export function setFluid ({ commit }, { fluid }) {
   commit('SET_FLUID', { fluid: fluid })
 }
 
+export function setVerticalLayout ({ commit }, { VerticalLayout }) {
+  commit('SET_VERTICAL_LAYOUT', { VerticalLayout: VerticalLayout })
+}
+
+export function setHorizontalLayout ({ commit }, { HorizontalLayout }) {
+  commit('SET_HORIZONTAL_LAYOUT', { HorizontalLayout: HorizontalLayout })
+}
 // export function setMenuAutoExpand ({ commit }, { menuAutoExpand }) {
 //   commit('SET_MENU_AUTO_EXPAND', { menuAutoExpand: menuAutoExpand })
 // }

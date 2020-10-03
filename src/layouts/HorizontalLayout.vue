@@ -20,6 +20,8 @@
 
 <script>
 import Vue from 'vue'
+import { mapActions, mapState } from 'vuex'
+
 import Layout from '@mixins/Layout'
 
 import HorizontalNavBar from 'components/HorizontalNavBar'
@@ -36,39 +38,43 @@ export default Vue.extend({
     return {
     }
   },
-  props: {
-    topbar: {
-      type: Object,
-      default: function () {
-        return {
-          available: true,
-          combined: false,
-          dark: false
-        }
-      }
-    },
-    navbar: {
-      type: Object,
-      default: function () {
-        return {
-          available: true,
-          // right: false,
-          dark: false
-        }
-      }
-    },
-    condensed: {
-      type: Boolean,
-      default: false
-    },
-    // fluid: {
-    //   type: Boolean,
-    //   default: false
-    // }
-  },
+  // props: {
+  //   topbar: {
+  //     type: Object,
+  //     default: function () {
+  //       return {
+  //         available: true,
+  //         combined: false,
+  //         dark: false
+  //       }
+  //     }
+  //   },
+  //   navbar: {
+  //     type: Object,
+  //     default: function () {
+  //       return {
+  //         available: true,
+  //         // right: false,
+  //         dark: false
+  //       }
+  //     }
+  //   },
+  //   condensed: {
+  //     type: Boolean,
+  //     default: false
+  //   },
+  //   // fluid: {
+  //   //   type: Boolean,
+  //   //   default: false
+  //   // }
+  // },
 
   computed: {
-
+    ...mapState({
+      navbar: state => state.layout.HorizontalLayout.navbar,
+      topbar: state => state.layout.HorizontalLayout.topbar,
+      condensed: state => state.layout.HorizontalLayout.condensed,
+    }),
     containerClass: function () {
       let appendClass = ''
 
