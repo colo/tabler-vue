@@ -32,7 +32,8 @@
         > -->
           <b-form-radio v-model="mode" name="VerticalLayout" value="VerticalLayout" plain>Vertical</b-form-radio>
           <b-form-radio v-model="mode" name="HorizontalLayout" value="HorizontalLayout" plain>Horizontal</b-form-radio>
-          <b-form-checkbox v-model="fluid" plain>Fluid</b-form-checkbox>
+          <b-form-checkbox class="form-switch" v-model="fluid" plain>Fluid</b-form-checkbox>
+          <b-form-checkbox v-if="mode === 'HorizontalLayout'" class="form-switch" v-model="condensed" plain>Condensed</b-form-checkbox>
         <!-- </b-form-checkbox-group> -->
       </b-form-group>
       <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon dropdown-item-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg> -->
@@ -148,6 +149,18 @@ export default {
         let payload = {}
         payload[mode] = layout
         this.$store.dispatch('layout/set' + mode, payload)
+      }
+    },
+    condensed: {
+      get () {
+        return this.$store.state.layout.HorizontalLayout.condensed
+      },
+      set (value) {
+        let layout = JSON.parse(JSON.stringify(this.$store.state.layout.HorizontalLayout))// create a copy to avoid "Error: [vuex] do not mutate vuex store state outside mutation handlers."
+        layout.condensed = value
+        let payload = {}
+        payload.HorizontalLayout = layout
+        this.$store.dispatch('layout/setHorizontalLayout', payload)
       }
     },
     disabledNavBar: function () {
