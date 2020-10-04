@@ -12,6 +12,8 @@
             <router-view />
           </q-page-container>
         </div>
+
+        <content-footer />
       </div>
     </div>
   </q-layout>
@@ -26,13 +28,15 @@ import Layout from '@mixins/Layout'
 
 import HorizontalNavBar from 'components/HorizontalNavBar'
 import TopBar from 'components/TopBar'
+import ContentFooter from 'components/ContentFooter'
 
 export default Vue.extend({
   name: 'HorizontalLayout',
   mixins: [Layout],
   components: {
     HorizontalNavBar,
-    TopBar
+    TopBar,
+    ContentFooter
   },
   data () {
     return {
