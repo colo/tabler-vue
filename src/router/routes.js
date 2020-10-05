@@ -63,6 +63,12 @@ const routes = [
     component: () => import('pages/Tables.vue'),
     meta: { layout: 'VerticalLayout' },
   },
+  {
+    path: '/calendar',
+    name: 'calendar',
+    component: () => import('pages/Calendar.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
