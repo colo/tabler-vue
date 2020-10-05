@@ -1,8 +1,8 @@
 <template>
   <!-- <b-navbar toggleable="md" :type="(dark) ? 'dark' : 'light'" tag="header"> -->
-    <div :class="containerClass">
+    <div :class="containerClass" :style="containerStyle">
       <b-navbar-toggle target="navbar-menu"></b-navbar-toggle>
-      <bar-logo v-if="combined === false" :horizontal="true" :dark="dark" />
+      <bar-logo v-if="combined === false && logo === true" :horizontal="true" :dark="dark" :small="smallLogo"/>
 
       <!-- Right aligned nav items -->
       <bar-dropdowns />
@@ -13,8 +13,8 @@
             <bar-search v-if="vertical === true"/>
 
             <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center" v-if="condensed === true">
-              <nav-bar :dark="dark" :condensed="true" :vertical="false"/>
-              <div class="ml-md-auto pl-md-4 py-2 py-md-0 mr-md-4 order-first order-md-last flex-grow-1 flex-md-grow-0">
+              <nav-bar :dark="dark" :condensed="true" :vertical="false" :background="background"/>
+              <div class="ml-md-auto pl-md-4 py-2 py-md-0 mr-md-4 order-first order-md-last" :class="searchClass">
                 <bar-search />
               </div>
             </div>
@@ -70,8 +70,39 @@ export default {
       type: Boolean,
       default: false
     },
+    background: {
+      type: String,
+      default: ''
+    },
+    grow: {
+      type: Boolean,
+      default: false
+    },
+    smallLogo: {
+      type: Boolean,
+      default: false
+    },
+    logo: {
+      type: Boolean,
+      default: true
+    },
   },
   computed: {
+
+    searchClass: function () {
+      let appendClass = ''
+
+      appendClass += (this.grow === false) ? 'flex-md-grow-0' : 'flex-grow-1'
+
+      return appendClass
+    },
+    containerStyle: function () {
+      let appendStyle = {}
+
+      if (this.background !== '') appendStyle.background = this.background
+
+      return appendStyle
+    },
     containerClass: function () {
       let appendClass = ''
 

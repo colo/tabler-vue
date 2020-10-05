@@ -1,10 +1,10 @@
 <template>
   <!-- <aside class="navbar" :class="asideClass"> -->
-    <b-navbar toggleable="lg" :type="(dark) ? 'dark' : 'light'" tag="aside" class="navbar-vertical" :class="asideClass">
+    <b-navbar toggleable="lg" :type="(dark) ? 'dark' : 'light'" tag="aside" class="navbar-vertical" :class="asideClass" :style="containerStyle">
       <div class="container">
         <b-navbar-toggle target="navbar-menu"></b-navbar-toggle>
 
-        <bar-logo :dark="dark"/>
+        <bar-logo v-if="logo" :dark="dark" :small="smallLogo"/>
 
         <!-- Right aligned nav items -->
         <bar-dropdowns :vertical="true"/>
@@ -45,9 +45,28 @@ export default {
     dark: {
       type: Boolean,
       default: false
-    }
+    },
+    background: {
+      type: String,
+      default: ''
+    },
+    smallLogo: {
+      type: Boolean,
+      default: false
+    },
+    logo: {
+      type: Boolean,
+      default: true
+    },
   },
   computed: {
+    containerStyle: function () {
+      let appendStyle = {}
+
+      if (this.background !== '') appendStyle.background = this.background
+
+      return appendStyle
+    },
     asideClass: function () {
       let appendClass = ''
       appendClass += (this.dark === true) ? 'navbar-dark ' : 'navbar-light '

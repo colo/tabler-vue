@@ -1,10 +1,20 @@
 <template>
   <q-layout>
     <div class="page">
-      <b-navbar toggleable="md" :type="(darkTopBar === true) ? 'dark' : 'light'" tag="header">
-        <top-bar :condensed="condensed" :combined="topbar.combined" :dark="darkTopBar" :fluid="fluid" v-if="topbar.available === true"/>
+      <b-navbar toggleable="md" :type="(darkTopBar === true) ? 'dark' : 'light'" tag="header" :style="topbarContainerStyle">
+        <top-bar
+          v-if="topbar.available === true"
+          :condensed="condensed"
+          :combined="topbar.combined"
+          :dark="darkTopBar"
+          :fluid="fluid"
+          :background="topbar.background"
+          :grow="topbar.grow"
+          :smallLogo="smallLogo"
+          :logo="logo"
+          />
       </b-navbar>
-      <horizontal-nav-bar v-if="condensed !== true && navbar.available === true" :dark="darkNavBar" :fluid="fluid"/>
+      <horizontal-nav-bar v-if="condensed !== true && navbar.available === true" :dark="darkNavBar" :fluid="fluid" :background="navbar.background"/>
 
       <div class="content">
         <div :class="containerClass">
@@ -78,6 +88,8 @@ export default Vue.extend({
       navbar: state => state.layout.HorizontalLayout.navbar,
       topbar: state => state.layout.HorizontalLayout.topbar,
       condensed: state => state.layout.HorizontalLayout.condensed,
+      smallLogo: state => state.layout.HorizontalLayout.smallLogo,
+      logo: state => state.layout.HorizontalLayout.logo,
     }),
     containerClass: function () {
       let appendClass = ''

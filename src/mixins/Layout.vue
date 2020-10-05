@@ -39,6 +39,10 @@ export default Vue.extend({
     //   type: Boolean,
     //   default: false
     // }
+    // background: {
+    //   type: String,
+    //   default: '' // #7952b3
+    // }
   },
   computed: {
     darkTopBar: function () {
@@ -53,7 +57,20 @@ export default Vue.extend({
       fluid: state => state.layout.fluid,
       mode: state => state.layout.mode,
     }),
+    topbarContainerStyle: function () {
+      let appendStyle = {}
 
+      if (this.topbar.background !== '') appendStyle.background = this.topbar.background
+
+      return appendStyle
+    },
+    navbarContainerStyle: function () {
+      let appendStyle = {}
+
+      if (this.navbar.background !== '') appendStyle.background = this.navbar.background
+
+      return appendStyle
+    },
     // dark: {
     //   get () {
     //     return this.$store.state.layout.dark

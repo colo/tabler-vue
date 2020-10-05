@@ -13,11 +13,20 @@ export default {
     dark: {
       type: Boolean,
       default: false
-    }
+    },
+    small: {
+      type: Boolean,
+      default: false
+    },
+
   },
   computed: {
     logo: function () {
-      return (this.dark === true) ? 'logo-white.svg' : 'logo.svg'
+      let img = 'logo'
+      img += (this.small === true) ? '-small' : ''
+      img += (this.dark === true) ? '-white' : ''
+      img += '.svg'
+      return img
     }
   }
 }

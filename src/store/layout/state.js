@@ -4,29 +4,37 @@ const vertical = {
   topbar: {
     available: true,
     combined: true,
-    dark: false
+    dark: false,
+    background: '', // #7952b3
+    grow: false,
   },
   navbar: {
     available: true,
     right: false,
-    dark: true
-  }
-
+    dark: true,
+    background: '' // #8055b3
+  },
+  smallLogo: false,
+  logo: true,
 }
 
 const horizontal = {
   topbar: {
     available: true,
     combined: false,
-    dark: false
+    dark: false,
+    background: '', // #7952b3
+    grow: false,
   },
   navbar: {
     available: true,
     // right: false,
-    dark: false
+    dark: false,
+    background: '' // #8055b3
   },
-
-  condensed: false
+  condensed: false,
+  smallLogo: false,
+  logo: true,
 }
 
 export default function () {

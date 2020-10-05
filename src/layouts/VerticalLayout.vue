@@ -1,11 +1,24 @@
 <template>
   <q-layout>
-    <vertical-nav-bar v-if="navbar.available === true" :right="navbar.right" :dark="darkNavBar"/>
-    <!-- :right="true" :dark="false" -->
+    <vertical-nav-bar
+      v-if="navbar.available === true"
+      :right="navbar.right"
+      :dark="darkNavBar"
+      :background="navbar.background"
+      :smallLogo="smallLogo"
+      :logo="logo"
+      />
 
     <div class="page">
-      <b-navbar toggleable="md" :type="(darkTopBar === true) ? 'dark' : 'light'" tag="header" v-if="topbar.available === true" class="d-none d-lg-flex">
-        <top-bar :combined="topbar.combined" :dark="darkTopBar" :fluid="fluid" :vertical="true"/>
+      <b-navbar toggleable="md" :type="(darkTopBar === true) ? 'dark' : 'light'" tag="header" v-if="topbar.available === true" class="d-none d-lg-flex" :style="topbarContainerStyle">
+        <top-bar
+          :combined="topbar.combined"
+          :dark="darkTopBar"
+          :fluid="fluid"
+          :vertical="true"
+          :background="topbar.background"
+          :grow="false"
+        />
       </b-navbar>
       <div class="content">
         <div :class="containerClass">
@@ -70,6 +83,8 @@ export default Vue.extend({
     ...mapState({
       navbar: state => state.layout.VerticalLayout.navbar,
       topbar: state => state.layout.VerticalLayout.topbar,
+      smallLogo: state => state.layout.VerticalLayout.smallLogo,
+      logo: state => state.layout.VerticalLayout.logo,
       fluid: state => state.layout.fluid,
     }),
     containerClass: function () {

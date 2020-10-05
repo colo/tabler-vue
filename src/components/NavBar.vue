@@ -50,6 +50,11 @@ export default {
       type: Boolean,
       default: false
     },
+
+    background: {
+      type: String,
+      default: ''
+    }
   },
   computed: {
     // internalClass: function () {
@@ -71,6 +76,8 @@ export default {
 
     containerStyle: function () {
       let appendStyle = (this.condensed === true && this.vertical !== true) ? {display: 'contents'} : {}
+
+      if (this.background !== '') appendStyle.background = this.background
 
       return appendStyle
     },

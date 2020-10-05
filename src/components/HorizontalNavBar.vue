@@ -1,8 +1,8 @@
 <template>
-  <div class="navbar-expand-md">
+  <div class="navbar-expand-md" >
     <b-collapse id="navbar-menu" is-nav>
-      <b-navbar toggleable="md" :type="(dark) ? 'dark' : 'light'" tag="div">
-        <nav-bar :vertical="false" :dark="dark" :condensed="condensed" :fluid="fluid"/>
+      <b-navbar toggleable="md" :type="(dark) ? 'dark' : 'light'" tag="div" :style="containerStyle" >
+        <nav-bar :vertical="false" :dark="dark" :condensed="condensed" :fluid="fluid" :background="background"/>
       </b-navbar>
     </b-collapse>
   </div>
@@ -38,8 +38,19 @@ export default {
       type: Boolean,
       default: true
     },
+    background: {
+      type: String,
+      default: ''
+    }
   },
   computed: {
+    containerStyle: function () {
+      let appendStyle = {}
+
+      if (this.background !== '') appendStyle.background = this.background
+
+      return appendStyle
+    },
     // internalClass: function () {
     //   let appendClass = ''
     //   appendClass += (this.dark === true) ? 'navbar navbar-dark ' : 'navbar navbar-light '
