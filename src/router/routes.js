@@ -57,6 +57,12 @@ const routes = [
     component: () => import('pages/Modals.vue'),
     meta: { layout: 'VerticalLayout' },
   },
+  {
+    path: '/tables',
+    name: 'tables',
+    component: () => import('pages/Tables.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

@@ -57,6 +57,12 @@
           Modals
         <!-- </span> -->
       </b-dropdown-item>
+      <b-dropdown-item :to="{name: 'tables'}">
+          Tables
+      </b-dropdown-item>
+      <b-dropdown-item :to="{name: 'calendar'}">
+          Calendar
+      </b-dropdown-item>
     </b-nav-item-dropdown>
 
   </b-navbar-nav>
