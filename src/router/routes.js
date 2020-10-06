@@ -69,6 +69,13 @@ const routes = [
     component: () => import('pages/Calendar.vue'),
     meta: { layout: 'VerticalLayout' },
   },
+  {
+    path: '/carousel',
+    name: 'carousel',
+    component: () => import('pages/Carousel.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {

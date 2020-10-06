@@ -63,6 +63,9 @@
       <b-dropdown-item :to="{name: 'calendar'}">
           Calendar
       </b-dropdown-item>
+      <b-dropdown-item :to="{name: 'carousel'}">
+          Carousel
+      </b-dropdown-item>
     </b-nav-item-dropdown>
 
   </b-navbar-nav>
