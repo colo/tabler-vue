@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Error404',
+  name: 'PageError',
   props: {
     number: {
       type: Number,
