@@ -588,6 +588,7 @@
         <div class="card">
           <!-- <div id="chart-development-activity" class="mt-4"></div> -->
           <apexchart
+            :class="'mt-4'"
             height="160"
             id="chart-development-activity"
             :options="{
