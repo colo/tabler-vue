@@ -97,6 +97,34 @@
       <b-dropdown-item :to="{name: 'snippets'}">
           Snippets
       </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'search'}">
+          Search results
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'pricing'}">
+          Pricing cards
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'users'}">
+          Users
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'gallery'}">
+          Gallery
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'profile'}">
+          Profile
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'music'}">
+          Music
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'welcome'}">
+          Welcome
+      </b-dropdown-item>
     </b-nav-item-dropdown>
 
   </b-navbar-nav>

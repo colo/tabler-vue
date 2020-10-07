@@ -1,6 +1,6 @@
 <template>
   <div id="q-app">
-    <component :is="this.mode || this.$route.meta.layout">
+    <component :is="this.$route.meta.layout || this.mode">
       <router-view />
     </component>
   </div>
@@ -23,6 +23,7 @@ import { mapActions } from 'vuex'
 */
 import VerticalLayout from './layouts/VerticalLayout.vue'
 import HorizontalLayout from './layouts/HorizontalLayout.vue'
+import EmptyLayout from './layouts/EmptyLayout.vue'
 
 import TestLayout from './layouts/TestLayout.vue'
 
@@ -31,6 +32,7 @@ export default {
   components: {
     VerticalLayout,
     HorizontalLayout,
+    EmptyLayout,
     TestLayout
   },
   computed: {
