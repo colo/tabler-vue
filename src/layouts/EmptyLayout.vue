@@ -84,6 +84,15 @@ export default Vue.extend({
     this.toggleBodyClass('addClass', 'border-primary')
     this.toggleBodyClass('addClass', 'd-flex')
     this.toggleBodyClass('addClass', 'flex-column')
+  },
+  beforeDestroy: function () {
+    // called when the route that renders this component is about to
+    // be navigated away from.
+    // has access to `this` component instance.
+    this.toggleBodyClass('removeClass', 'border-top-wide')
+    this.toggleBodyClass('removeClass', 'border-primary')
+    this.toggleBodyClass('removeClass', 'd-flex')
+    this.toggleBodyClass('removeClass', 'flex-column')
   }
 
 })

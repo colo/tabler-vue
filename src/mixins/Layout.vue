@@ -122,6 +122,12 @@ export default Vue.extend({
     this.toggleBodyClass('addClass', 'antialiased')
     this.toggleBodyStyle('display', 'block')
     // this.$q.dark.set(this.dark)
+  },
+  beforeDestroy: function () {
+    this.toggleBodyClass('removeClass', 'theme-dark')
+    this.toggleBodyClass('removeClass', 'antialiased')
+    // this.toggleBodyStyle('display', 'block')
+    // this.$q.dark.set(this.dark)
   }
 })
 </script>

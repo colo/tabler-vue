@@ -154,7 +154,9 @@ const routes = [
   // but you can also remove it
   {
     path: '*',
-    component: () => import('pages/Error404.vue')
+    component: () => import('pages/Error.vue'),
+    props: { number: 404, title: 'Oops… You just found an error page', subtitle: 'We are sorry but the page you are looking for was not found'},
+    meta: { layout: 'EmptyLayout' },
   }
 ]
 
