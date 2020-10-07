@@ -75,7 +75,39 @@ const routes = [
     component: () => import('pages/Carousel.vue'),
     meta: { layout: 'VerticalLayout' },
   },
-
+  {
+    path: '/lists',
+    name: 'lists',
+    component: () => import('pages/Lists.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
+  {
+    path: '/form-elements',
+    name: 'form-elements',
+    component: () => import('pages/Form.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
+  /**
+  * Extras
+  **/
+  {
+    path: '/invoice',
+    name: 'invoice',
+    component: () => import('pages/Invoice.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    component: () => import('pages/Blog.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
+  {
+    path: '/snippets',
+    name: 'snippets',
+    component: () => import('pages/Snippets.vue'),
+    meta: { layout: 'VerticalLayout' },
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

@@ -11,7 +11,7 @@
       <!-- </a> -->
     </b-nav-item>
 
-    <b-nav-item-dropdown>
+    <b-nav-item-dropdown menu-class="dropdown-menu-columns dropdown-menu-columns-2">
       <!-- Using 'button-content' slot -->
       <template v-slot:button-content>
         <!-- <a class="nav-link dropdown-toggle" href="#navbar-base" data-toggle="dropdown" role="button" aria-expanded="false" > -->
@@ -65,6 +65,37 @@
       </b-dropdown-item>
       <b-dropdown-item :to="{name: 'carousel'}">
           Carousel
+      </b-dropdown-item>
+      <b-dropdown-item :to="{name: 'lists'}">
+          Lists
+      </b-dropdown-item>
+    </b-nav-item-dropdown>
+
+    <b-nav-item :to="{name: 'form-elements'}">
+      <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="9 11 12 14 20 6" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
+      </span>
+      <span class="nav-link-title">
+        Form elements
+      </span>
+    </b-nav-item>
+
+    <b-nav-item-dropdown>
+      <!-- menu-class="dropdown-menu-columns dropdown-menu-columns-2" -->
+      <template v-slot:button-content>
+        <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M12 17.75l-6.172 3.245 1.179-6.873-4.993-4.867 6.9-1.002L12 2l3.086 6.253 6.9 1.002-4.993 4.867 1.179 6.873z" /></svg>
+        </span>
+          Extra
+      </template>
+      <b-dropdown-item :to="{name: 'invoice'}">
+          Invoice
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'blog'}">
+          Blog cards
+      </b-dropdown-item>
+
+      <b-dropdown-item :to="{name: 'snippets'}">
+          Snippets
       </b-dropdown-item>
     </b-nav-item-dropdown>
 
