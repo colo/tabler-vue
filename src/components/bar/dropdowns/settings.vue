@@ -64,36 +64,15 @@
 
       <div class="mb-3">
         <div class="form-label">Dashboard Color Scheme</div>
-        <b-button v-b-toggle.collapse-1 tag="div" variant="outline-light">
-          <b-card
-            style="max-width: 20rem;"
-            class="mb-2"
-          >
-            <b-card-body>
-              <div class="mb-3">
-
-                  <div class="col-auto">
-                    <label class="form-colorinput">
-                      <input name="color" type="radio" value="dark" class="form-colorinput-input" size="xs"/>
-                      <span class="form-colorinput-color" :style="`background-color: ${lightColors[0]}`"></span>
-                    </label>
-                  </div>
-
-              </div>
-
-            </b-card-body>
-
-          </b-card>
-
+        <b-button v-b-toggle.collapse-1 tag="div" variant="white">
+          Default
         </b-button>
         <b-collapse id="collapse-1" class="mt-2">
-          <b-card>
-            <p class="card-text">Collapse contents Here</p>
-            <b-button v-b-toggle.collapse-1-inner size="sm">Toggle Inner Collapse</b-button>
-            <b-collapse id="collapse-1-inner" class="mt-2">
-              <b-card>Hello!</b-card>
-            </b-collapse>
-          </b-card>
+          <b-button v-b-toggle.collapse-1 tag="div" variant="outline-light">
+            <b-card>
+              <p class="card-text">Collapse contents Here</p>
+            </b-card>
+          </b-button>
         </b-collapse>
       </div>
 
