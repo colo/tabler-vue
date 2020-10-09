@@ -1,9 +1,9 @@
 <template>
   <!-- Right aligned nav items -->
   <b-navbar-nav :class="navClass" style="height: 48px;">
-    <bar-dropdowns-settings />
-    <bar-dropdowns-alerts />
-    <bar-dropdowns-user />
+    <bar-dropdowns-settings v-if="settings === true"/>
+    <bar-dropdowns-alerts v-if="alerts === true"/>
+    <bar-dropdowns-user v-if="user === true"/>
 
   </b-navbar-nav>
 </template>
@@ -22,7 +22,19 @@ export default {
     vertical: {
       type: Boolean,
       default: false,
-    }
+    },
+    alerts: {
+      type: Boolean,
+      default: true
+    },
+    user: {
+      type: Boolean,
+      default: true
+    },
+    settings: {
+      type: Boolean,
+      default: true
+    },
   },
   data () {
     return {

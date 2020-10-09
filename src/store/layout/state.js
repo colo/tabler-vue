@@ -63,6 +63,10 @@ const vertical = {
   },
   smallLogo: false,
   logo: true,
+  search: true,
+  alerts: true,
+  user: true,
+  settings: true
 }
 
 const horizontal = {
@@ -83,6 +87,10 @@ const horizontal = {
   condensed: false,
   smallLogo: false,
   logo: true,
+  search: true,
+  alerts: true,
+  user: true,
+  settings: true
 }
 
 export default function () {

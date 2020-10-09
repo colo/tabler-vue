@@ -10,7 +10,15 @@
         <bar-dropdowns :vertical="true"/>
 
         <b-collapse id="navbar-menu" is-nav>
-          <nav-bar :vertical="true" :dark="dark" :list="list"/>
+          <nav-bar
+            :vertical="true"
+            :dark="dark"
+            :list="list"
+            :search="search"
+            :user="user"
+            :alerts="alerts"
+            :settings="settings"
+          />
         </b-collapse>
     </div>
     </b-navbar>
@@ -61,7 +69,23 @@ export default {
     list: {
       type: Array,
       default: undefined
-    }
+    },
+    search: {
+      type: Boolean,
+      default: true
+    },
+    alerts: {
+      type: Boolean,
+      default: true
+    },
+    user: {
+      type: Boolean,
+      default: true
+    },
+    settings: {
+      type: Boolean,
+      default: true
+    },
   },
   computed: {
     containerStyle: function () {

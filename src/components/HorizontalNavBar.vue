@@ -2,7 +2,7 @@
   <div class="navbar-expand-md" >
     <b-collapse id="navbar-menu" is-nav>
       <b-navbar toggleable="md" :type="(dark) ? 'dark' : 'light'" tag="div" :style="containerStyle">
-        <nav-bar :vertical="false" :dark="dark" :condensed="condensed" :fluid="fluid" :background="background" :list="list"/>
+        <nav-bar :vertical="false" :dark="dark" :condensed="condensed" :fluid="fluid" :background="background" :list="list" :search="search"/>
       </b-navbar>
     </b-collapse>
   </div>
@@ -45,7 +45,11 @@ export default {
     list: {
       type: Array,
       default: undefined
-    }
+    },
+    search: {
+      type: Boolean,
+      default: true
+    },
   },
   computed: {
     containerStyle: function () {

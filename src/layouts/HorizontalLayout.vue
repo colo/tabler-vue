@@ -12,9 +12,14 @@
           :grow="topbar.grow"
           :smallLogo="smallLogo"
           :logo="logo"
+          :list="navbar.list"
+          :search="search"
+          :alerts="alerts"
+          :user="user"
+          :settings="settings"
           />
       </b-navbar>
-      <horizontal-nav-bar v-if="condensed !== true && navbar.available === true" :dark="darkNavBar" :fluid="fluid" :background="navbar.background" :list="navbar.list"/>
+      <horizontal-nav-bar v-if="condensed !== true && navbar.available === true" :dark="darkNavBar" :fluid="fluid" :background="navbar.background" :list="navbar.list" :search="search"/>
 
       <div class="content">
         <div :class="containerClass">
@@ -90,6 +95,10 @@ export default Vue.extend({
       condensed: state => state.layout.HorizontalLayout.condensed,
       smallLogo: state => state.layout.HorizontalLayout.smallLogo,
       logo: state => state.layout.HorizontalLayout.logo,
+      search: state => state.layout.HorizontalLayout.search,
+      user: state => state.layout.HorizontalLayout.user,
+      alerts: state => state.layout.HorizontalLayout.alerts,
+      settings: state => state.layout.HorizontalLayout.settings,
     }),
     containerClass: function () {
       let appendClass = ''
