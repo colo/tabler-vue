@@ -10,7 +10,7 @@
         <bar-dropdowns :vertical="true"/>
 
         <b-collapse id="navbar-menu" is-nav>
-          <nav-bar :vertical="true" :dark="dark"/>
+          <nav-bar :vertical="true" :dark="dark" :list="list"/>
         </b-collapse>
     </div>
     </b-navbar>
@@ -58,6 +58,10 @@ export default {
       type: Boolean,
       default: true
     },
+    list: {
+      type: Array,
+      default: undefined
+    }
   },
   computed: {
     containerStyle: function () {

@@ -7,6 +7,7 @@
       :background="navbar.background"
       :smallLogo="smallLogo"
       :logo="logo"
+      :list="navbar.list"
       />
 
     <div class="page">

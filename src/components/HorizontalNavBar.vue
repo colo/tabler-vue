@@ -1,8 +1,8 @@
 <template>
   <div class="navbar-expand-md" >
     <b-collapse id="navbar-menu" is-nav>
-      <b-navbar toggleable="md" :type="(dark) ? 'dark' : 'light'" tag="div" :style="containerStyle" >
-        <nav-bar :vertical="false" :dark="dark" :condensed="condensed" :fluid="fluid" :background="background"/>
+      <b-navbar toggleable="md" :type="(dark) ? 'dark' : 'light'" tag="div" :style="containerStyle">
+        <nav-bar :vertical="false" :dark="dark" :condensed="condensed" :fluid="fluid" :background="background" :list="list"/>
       </b-navbar>
     </b-collapse>
   </div>
@@ -41,6 +41,10 @@ export default {
     background: {
       type: String,
       default: ''
+    },
+    list: {
+      type: Array,
+      default: undefined
     }
   },
   computed: {

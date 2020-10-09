@@ -2,7 +2,7 @@
 
     <div :class="containerClass" :style="containerStyle">
 
-      <nav-bar-list />
+      <nav-bar-list :list="list"/>
 
       <!-- Right aligned nav items -->
       <!-- <b-navbar-nav class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last" v-if="vertical !== true">
@@ -54,6 +54,11 @@ export default {
     background: {
       type: String,
       default: ''
+    },
+
+    list: {
+      type: Array,
+      default: undefined
     }
   },
   computed: {

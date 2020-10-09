@@ -14,7 +14,7 @@
           :logo="logo"
           />
       </b-navbar>
-      <horizontal-nav-bar v-if="condensed !== true && navbar.available === true" :dark="darkNavBar" :fluid="fluid" :background="navbar.background"/>
+      <horizontal-nav-bar v-if="condensed !== true && navbar.available === true" :dark="darkNavBar" :fluid="fluid" :background="navbar.background" :list="navbar.list"/>
 
       <div class="content">
         <div :class="containerClass">
