@@ -33,15 +33,17 @@
 </template>
 
 <script>
-import BarLogo from 'components/bar/logo'
-import BarSearch from 'components/bar/search'
-import BarDropdowns from 'components/bar/dropdowns'
+import { BNavbarToggle, BCollapse } from 'bootstrap-vue'
+
+import BarLogo from 'components/layout/bar/logo'
+import BarSearch from 'components/layout/bar/search'
+import BarDropdowns from 'components/layout/bar/dropdowns'
 // import HorizontalNavBar from 'components/HorizontalNavBar'
-import NavBar from 'components/NavBar'
+import NavBar from 'components/layout/NavBar'
 
 export default {
   name: 'TopBar',
-  components: { BarLogo, BarSearch, BarDropdowns, NavBar },
+  components: { BNavbarToggle, BCollapse, BarLogo, BarSearch, BarDropdowns, NavBar },
 
   props: {
     // title: {

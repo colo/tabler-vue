@@ -25,7 +25,8 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <t-user-card />
+        <!-- <div class="card">
           <div class="card-body">
             <div class="row row-sm align-items-center">
               <div class="col-auto">
@@ -67,7 +68,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card">
@@ -834,7 +835,10 @@
 </template>
 
 <script>
+import TUserCard from 'components/TUserCard'
+
 export default {
-  name: 'PageEmpty'
+  name: 'PageEmpty',
+  components: { TUserCard }
 }
 </script>

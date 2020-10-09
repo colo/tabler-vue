@@ -880,13 +880,16 @@
 </template>
 
 <script>
+import { BDropdown, BDropdownItem } from 'bootstrap-vue'
 import Peity from 'vue-peity'
 
 export default {
   name: 'PageEmpty',
 
   components: {
-    Peity
+    Peity,
+    BDropdown,
+    BDropdownItem
   },
 
 }

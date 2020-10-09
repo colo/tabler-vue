@@ -130,8 +130,11 @@
 </template>
 
 <script>
+import { BNavbarNav, BNavItem, BNavItemDropdown, BDropdownItem } from 'bootstrap-vue'
+
 export default {
   name: 'NavBarList',
+  components: { BNavbarNav, BNavItem, BNavItemDropdown, BDropdownItem },
   props: {
     list: {
       type: [Array],

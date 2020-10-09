@@ -39,16 +39,19 @@
 import Vue from 'vue'
 import { mapActions, mapState } from 'vuex'
 
+import { BNavbar } from 'bootstrap-vue'
+
 import Layout from '@mixins/Layout'
 
-import HorizontalNavBar from 'components/HorizontalNavBar'
-import TopBar from 'components/TopBar'
-import ContentFooter from 'components/ContentFooter'
+import HorizontalNavBar from 'components/layout/HorizontalNavBar'
+import TopBar from 'components/layout/TopBar'
+import ContentFooter from 'components/layout/ContentFooter'
 
 export default Vue.extend({
   name: 'HorizontalLayout',
   mixins: [Layout],
   components: {
+    BNavbar,
     HorizontalNavBar,
     TopBar,
     ContentFooter

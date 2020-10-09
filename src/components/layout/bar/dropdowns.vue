@@ -9,14 +9,16 @@
 </template>
 
 <script>
-import BarDropdownsAlerts from 'components/bar/dropdowns/alerts'
-import BarDropdownsUser from 'components/bar/dropdowns/user'
-import BarDropdownsSettings from 'components/bar/dropdowns/settings'
+import { BNavbarNav } from 'bootstrap-vue'
+
+import BarDropdownsAlerts from 'components/layout/bar/dropdowns/alerts'
+import BarDropdownsUser from 'components/layout/bar/dropdowns/user'
+import BarDropdownsSettings from 'components/layout/bar/dropdowns/settings'
 
 export default {
   name: 'BarDropdowns',
 
-  components: { BarDropdownsAlerts, BarDropdownsUser, BarDropdownsSettings },
+  components: { BNavbarNav, BarDropdownsAlerts, BarDropdownsUser, BarDropdownsSettings },
 
   props: {
     vertical: {

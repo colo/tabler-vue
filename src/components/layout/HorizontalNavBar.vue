@@ -9,11 +9,13 @@
 </template>
 
 <script>
-import NavBar from 'components/NavBar'
+import { BCollapse, BNavbar, BNavbarToggle } from 'bootstrap-vue'
+
+import NavBar from 'components/layout/NavBar'
 
 export default {
   name: 'HorizontalNavBar',
-  components: { NavBar },
+  components: { BCollapse, BNavbar, BNavbarToggle, NavBar },
 
   props: {
     // title: {

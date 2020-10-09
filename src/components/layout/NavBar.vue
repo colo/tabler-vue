@@ -18,9 +18,9 @@
 </template>
 
 <script>
-// import BarLogo from 'components/bar/logo'
-import BarSearch from 'components/bar/search'
-import NavBarList from 'components/navbar/list'
+// import BarLogo from 'components/layout/bar/logo'
+import BarSearch from 'components/layout/bar/search'
+import NavBarList from 'components/layout/navbar/list'
 
 export default {
   name: 'NavBar',

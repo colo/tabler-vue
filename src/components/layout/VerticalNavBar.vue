@@ -26,13 +26,15 @@
 </template>
 
 <script>
-import BarLogo from 'components/bar/logo'
-import BarDropdowns from 'components/bar/dropdowns'
-import NavBar from 'components/NavBar'
+import { BNavbar, BNavbarToggle, BCollapse } from 'bootstrap-vue'
+
+import BarLogo from 'components/layout/bar/logo'
+import BarDropdowns from 'components/layout/bar/dropdowns'
+import NavBar from 'components/layout/NavBar'
 
 export default {
   name: 'VerticalNavBar',
-  components: { BarLogo, BarDropdowns, NavBar },
+  components: { BNavbar, BNavbarToggle, BCollapse, BarLogo, BarDropdowns, NavBar },
 
   props: {
     // title: {
