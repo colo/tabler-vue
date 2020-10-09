@@ -19,8 +19,8 @@ const navBarList = [
       { label: 'Icons', to: {name: 'icons'}},
       { label: 'Modals', to: {name: 'modals'}},
       { label: 'Tables', to: {name: 'tables'}},
-      { label: 'calendar', to: {name: 'calendar'}},
-      { label: 'carousel', to: {name: 'carousel'}},
+      { label: 'Calendar', to: {name: 'calendar'}},
+      { label: 'Carousel', to: {name: 'carousel'}},
       { label: 'Lists', to: {name: 'lists'}}
     ]
   },
