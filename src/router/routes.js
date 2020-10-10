@@ -150,6 +150,61 @@ const routes = [
     component: () => import('pages/Welcome.vue'),
     meta: { layout: 'EmptyLayout' },
   },
+  {
+    path: '/signin',
+    name: 'signin',
+    component: () => import('pages/Signin.vue'),
+    meta: { layout: 'EmptyLayout' },
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import('pages/Signup.vue'),
+    meta: { layout: 'EmptyLayout' },
+  },
+  {
+    path: '/tos',
+    name: 'tos',
+    component: () => import('pages/Tos.vue'),
+  },
+  {
+    path: '/typography',
+    name: 'typography',
+    component: () => import('pages/Typography.vue'),
+  },
+  {
+    path: '/tabs',
+    name: 'tabs',
+    component: () => import('pages/Tabs.vue'),
+  },
+  {
+    path: '/ribbons',
+    name: 'ribbons',
+    component: () => import('pages/Ribbons.vue'),
+  },
+  {
+    path: '/maintenance',
+    name: 'maintenance',
+    component: () => import('pages/Maintenance.vue'),
+    meta: { layout: 'EmptyLayout' },
+  },
+  {
+    path: '/lookup',
+    name: 'lookup',
+    component: () => import('pages/Lookup.vue'),
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgot-password',
+    component: () => import('pages/ForgotPassword.vue'),
+    meta: { layout: 'EmptyLayout' },
+  },
+  {
+    path: '/email',
+    name: 'email',
+    component: () => import('pages/Email.vue'),
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {

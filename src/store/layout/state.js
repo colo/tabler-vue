@@ -32,6 +32,7 @@ const navBarList = [
   {
     label: 'Extra',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M12 17.75l-6.172 3.245 1.179-6.873-4.993-4.867 6.9-1.002L12 2l3.086 6.253 6.9 1.002-4.993 4.867 1.179 6.873z" /></svg>',
+    columns: 2,
     list: [
       { label: 'Invoice', to: {name: 'invoice'}},
       { label: 'Blog cards', to: {name: 'blog'}},
@@ -43,6 +44,16 @@ const navBarList = [
       { label: 'Profile', to: {name: 'profile'}},
       { label: 'Music', to: {name: 'music'}},
       { label: 'Welcome', to: {name: 'welcome'}},
+      { label: 'Sign in', to: {name: 'signin'}},
+      { label: 'Sign up', to: {name: 'signup'}},
+      { label: 'Term of Service', to: {name: 'tos'}},
+      { label: 'Typography', to: {name: 'typography'}},
+      { label: 'Tabs', to: {name: 'tabs'}},
+      { label: 'Ribbons', to: {name: 'ribbons'}},
+      { label: 'Maintenance', to: {name: 'maintenance'}},
+      { label: 'Lookup company', to: {name: 'lookup'}},
+      { label: 'Forgot password', to: {name: 'forgot-password'}},
+      { label: 'Email', to: {name: 'email'}},
     ]
   }
 ]
