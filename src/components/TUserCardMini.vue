@@ -104,18 +104,18 @@ export default {
 
       return name
     },
-    statusClass: function () {
-      if (this.status && !this.status.class) {
-        if (this.status.label.toLowerCase() === 'online') return 'bg-green-lt'
-        return 'bg-gray-lt'
-      } else {
-        return this.status.class
-      }
-    },
-    progressLabel: function () {
-      if (this.progress && !this.progress.label) return this.progress.value + '%'
-      return this.progress.label
-    },
+    // statusClass: function () {
+    //   if (this.status && !this.status.class) {
+    //     if (this.status.label.toLowerCase() === 'online') return 'bg-green-lt'
+    //     return 'bg-gray-lt'
+    //   } else {
+    //     return this.status.class
+    //   }
+    // },
+    // progressLabel: function () {
+    //   if (this.progress && !this.progress.label) return this.progress.value + '%'
+    //   return this.progress.label
+    // },
   }
 }
 </script>
