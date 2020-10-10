@@ -16,17 +16,12 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-xl-3">
-        <a class="card card-link" href="#">
-          <div class="card-body">
-            <div class="float-left mr-3">
-              <span class="avatar rounded" style="background-image: url(./static/avatars/001f.jpg)"></span>
-            </div>
-            <div class="lh-sm">
-              <div class="strong">Maryjo Lebarree</div>
-              <div class="text-muted">Civil Engineer</div>
-            </div>
-          </div>
-        </a>
+        <t-user-card-mini
+          name="Maryjo Lebarree"
+          title="Civil Engineer"
+          avatar="./static/avatars/001f.jpg"
+          :to="{ path: '#' }"
+        />
       </div>
       <div class="col-md-6 col-xl-3">
         <a class="card card-link" href="#">
@@ -883,13 +878,16 @@
 import { BDropdown, BDropdownItem } from 'bootstrap-vue'
 import Peity from 'vue-peity'
 
+import TUserCardMini from 'components/TUserCardMini'
+
 export default {
   name: 'PageEmpty',
 
   components: {
     Peity,
     BDropdown,
-    BDropdownItem
+    BDropdownItem,
+    TUserCardMini
   },
 
 }

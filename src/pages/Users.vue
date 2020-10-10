@@ -90,7 +90,7 @@
             value: 42,
             max: 100,
           }"
-          />
+        />
 
         <!-- <div class="card">
           <div class="card-body">
