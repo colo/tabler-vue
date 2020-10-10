@@ -71,7 +71,28 @@
         </div> -->
       </div>
       <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <t-user-card
+          :name="'Jeffie Lewzey'"
+          :title="'Chemical Engineer'"
+          :avatar="false"
+          :to="{ path: '#' }"
+          :actions="[
+            {label: 'Chat', to: {path: '#'}, variant: 'info'},
+            {label: 'Profile', to: {path: '#'}, variant: 'outline-info'}
+          ]"
+          :status="{
+            label: 'online'
+          }"
+          :progress="{
+            title: 'Progress',
+            label: undefined,
+            class: 'bg-blue',
+            value: 42,
+            max: 100,
+          }"
+          />
+
+        <!-- <div class="card">
           <div class="card-body">
             <div class="row row-sm align-items-center">
               <div class="col-auto">
@@ -113,7 +134,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card">

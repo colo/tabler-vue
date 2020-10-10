@@ -96,10 +96,21 @@ export default {
     }
 
   },
+  // data () {
+  //   return {
+  //     default_progress: {
+  //       title: 'Progress',
+  //       label: undefined,
+  //       class: 'bg-blue',
+  //       value: 50,
+  //       max: 100,
+  //     }
+  //   }
+  // },
   computed: {
     processedAvatar: function () {
       if (typeof avatar === 'string') {
-        return { 'background-image': this.avatar }
+        return { 'background-image': 'url(' + this.avatar + ')' }
       } else if (this.avatar === null || this.avatar === false || this.avatar === undefined) {
         return false
       } else {
