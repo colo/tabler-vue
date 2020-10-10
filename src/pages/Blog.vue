@@ -158,7 +158,8 @@
         </div> -->
       </div>
       <div class="col-sm-6">
-        <div class="card d-flex flex-column">
+        <t-horizontal-blog-card />
+        <!-- <div class="card d-flex flex-column">
           <div class="row row-0 flex-fill">
             <div class="col-md-3">
               <a href="#">
@@ -184,10 +185,21 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-sm-6">
-        <div class="card d-flex flex-column">
+        <t-horizontal-blog-card
+          author="Emmy Levet"
+          author-avatar="../static/avatars/003m.jpg"
+          body="Well, we did do the nose. Why? Shut up! Will you shut up?! You don't frighten us, English pig-dog..."
+          title="Well, I didn't vote for you."
+          :card-options="{
+            'img-src': '../static/photos//35b88fc04a518c1b.jpg',
+            'img-alt': 'Card side image'
+          }"
+          action-class="icon d-none d-md-inline-block ml-3 text-muted"
+        />
+        <!-- <div class="card d-flex flex-column">
           <div class="row row-0 flex-fill">
             <div class="col-md-3">
               <a href="#">
@@ -213,7 +225,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-sm-6">
         <div class="card d-flex flex-column">
@@ -279,9 +291,10 @@
 
 <script>
 import TBlogCard from 'components/TBlogCard'
+import THorizontalBlogCard from 'components/THorizontalBlogCard'
 
 export default {
   name: 'PageBlog',
-  components: { TBlogCard }
+  components: { TBlogCard, THorizontalBlogCard }
 }
 </script>

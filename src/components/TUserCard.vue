@@ -1,22 +1,29 @@
 <template>
   <b-card>
-    <div class="row row-sm align-items-center">
-      <div class="col-auto">
+    <!-- <div class="row row-sm align-items-center"> -->
+    <b-row align-h="center">
+      <!-- <div class="col-auto"> -->
+      <b-col class="col-auto">
         <span v-if="processedAvatar" class="avatar avatar-md" :style="processedAvatar"></span>
         <span v-else class="avatar avatar-md">{{processedName}}</span>
-      </div>
-      <div class="col">
+      <!-- </div> -->
+      </b-col>
+      <b-col>
         <h3 class="mb-0"><b-link :to="to">{{name}}</b-link></h3>
         <div class="text-muted text-h5">{{title}}</div>
-      </div>
-      <div class="col-auto lh-1 align-self-start">
+      </b-col>
+      <b-col class="col-auto lh-1" align-self="start">
+      <!-- <div class="col-auto lh-1 align-self-start"> -->
         <span class="badge" :class="statusClass">
           {{status.label}}
         </span>
-      </div>
-    </div>
-    <div class="row align-items-center mt-4">
-      <div class="col">
+      <!-- </div> -->
+      </b-col>
+    </b-row>
+
+    <!-- <div class="row align-items-center mt-4"> -->
+    <b-row align-h="center" align-v="center" class="mt-4">
+      <b-col>
         <div>
           <div class="d-flex mb-1 align-items-center lh-1">
             <div class="text-h5 font-weight-bolder m-0">{{progress.title}}</div>
@@ -26,22 +33,25 @@
             <b-progress-bar :value="progress.value" :class="progress.class"></b-progress-bar>
           </b-progress>
         </div>
-      </div>
-      <div class="col-auto">
+      </b-col>
+      <b-col class="col-auto">
         <div class="btn-list">
           <b-button v-for="(action, index) in actions" :variant="action.variant || 'white'" size="sm" :to="action.to" :key="index">{{action.label}}</b-button>
         </div>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
+
+    <!-- </div> -->
+
   </b-card>
 </template>
 
 <script>
-import { BCard, BProgress, BProgressBar, BButton, BLink } from 'bootstrap-vue'
+import { BCard, BProgress, BProgressBar, BButton, BLink, BRow, BCol } from 'bootstrap-vue'
 
 export default {
   name: 'TUserCard',
-  components: { BCard, BProgress, BProgressBar, BButton, BLink },
+  components: { BCard, BProgress, BProgressBar, BButton, BLink, BRow, BCol },
 
   props: {
     name: {
