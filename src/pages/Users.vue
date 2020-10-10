@@ -25,7 +25,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-lg-4">
-        <t-user-card />
+        <t-user-card-progress />
         <!-- <div class="card">
           <div class="card-body">
             <div class="row row-sm align-items-center">
@@ -71,7 +71,7 @@
         </div> -->
       </div>
       <div class="col-md-6 col-lg-4">
-        <t-user-card
+        <t-user-card-progress
           :name="'Jeffie Lewzey'"
           :title="'Chemical Engineer'"
           :avatar="false"
@@ -856,10 +856,10 @@
 </template>
 
 <script>
-import TUserCard from 'components/TUserCard'
+import TUserCardProgress from 'components/TUserCardProgress'
 
 export default {
   name: 'PageUsers',
-  components: { TUserCard }
+  components: { TUserCardProgress }
 }
 </script>

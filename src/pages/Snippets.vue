@@ -20,7 +20,7 @@
           name="Maryjo Lebarree"
           title="Civil Engineer"
           avatar="./static/avatars/001f.jpg"
-          :to="{ path: '#' }"
+          :to="{ name: 'profile' }"
         />
       </div>
       <div class="col-md-6 col-xl-3">
@@ -63,7 +63,13 @@
         </a>
       </div>
       <div class="col-md-6 col-xl-3">
-        <div class="card">
+        <t-user-card-mini
+          name="Thatcher Keel"
+          title="VP Sales"
+          avatar="./static/avatars/010m.jpg"
+          :to="{ name: 'profile' }"
+        />
+        <!-- <div class="card">
           <div class="card-body text-center">
             <div class="mb-3">
               <span class="avatar avatar-xl" style="background-image: url(./static/avatars/010m.jpg)"></span>
@@ -72,7 +78,7 @@
             <div class="text-muted">VP Sales</div>
           </div>
           <a href="#" class="card-btn">View full profile</a>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-xl-3">
         <div class="card">
