@@ -859,7 +859,7 @@
 import TUserCard from 'components/TUserCard'
 
 export default {
-  name: 'PageEmpty',
+  name: 'PageUsers',
   components: { TUserCard }
 }
 </script>

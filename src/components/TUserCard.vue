@@ -109,7 +109,7 @@ export default {
   // },
   computed: {
     processedAvatar: function () {
-      if (typeof avatar === 'string') {
+      if (typeof this.avatar === 'string') {
         return { 'background-image': 'url(' + this.avatar + ')' }
       } else if (this.avatar === null || this.avatar === false || this.avatar === undefined) {
         return false

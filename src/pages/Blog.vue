@@ -12,7 +12,8 @@
     </div>
     <div class="row row-deck">
       <div class="col-sm-6 col-xl-4">
-        <div class="card d-flex flex-column">
+        <t-blog-card />
+        <!-- <div class="card d-flex flex-column">
           <a href="#">
             <img class="card-img-top" src="../static/photos//9f36332564ca271d.jpg" alt="And this isn&#39;t my nose. This is a false one.">
           </a>
@@ -32,7 +33,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-sm-6 col-xl-4">
         <div class="card d-flex flex-column">
@@ -81,7 +82,15 @@
         </div>
       </div>
       <div class="col-sm-6 col-xl-4">
-        <div class="card d-flex flex-column">
+        <t-blog-card
+          author="Perren Keemar"
+          author-avatar="../static/avatars/004f.jpg"
+          body="Please do not offer my god a peanut. That's why I love elementary school, Edna. The children beli..."
+          title="Weaseling out of things is important to learn."
+          :card-options="{}"
+          action-class="icon d-none d-md-inline-block ml-3 text-muted"
+        />
+        <!-- <div class="card d-flex flex-column">
           <div class="card-body d-flex flex-column">
             <h3 class="card-title"><a href="#">Weaseling out of things is important to learn.</a></h3>
             <div class="text-muted">Please do not offer my god a peanut. That's why I love elementary school, Edna. The children beli...</div>
@@ -98,7 +107,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-sm-6 col-xl-4">
         <div class="card d-flex flex-column">
@@ -121,9 +130,17 @@
         </div>
       </div>
       <div class="col-sm-6 col-xl-4">
-        <div class="card d-flex flex-column">
+        <t-blog-card
+          author="Geoffry Flaunders"
+          :author-avatar="false"
+          body="I don't like being outdoors, Smithers. For one thing, there's too many fat children. Oh, loneline..."
+          title="I hope I didn't brain my damage"
+          :card-options="{}"
+          action-class="icon d-none d-md-inline-block ml-3 text-muted"
+        />
+        <!-- <div class="card d-flex flex-column">
           <div class="card-body d-flex flex-column">
-            <h3 class="card-title"><a href="#">I hope I didn't brain my damage.</a></h3>
+            <h3 class="card-title"><a href="#">I hope I didn't brain my damage</a></h3>
             <div class="text-muted">I don't like being outdoors, Smithers. For one thing, there's too many fat children. Oh, loneline...</div>
             <div class="d-flex align-items-center pt-5 mt-auto">
               <span class="avatar avatar-md">SA</span>
@@ -138,7 +155,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-sm-6">
         <div class="card d-flex flex-column">
@@ -261,7 +278,10 @@
 </template>
 
 <script>
+import TBlogCard from 'components/TBlogCard'
+
 export default {
-  name: 'PageEmpty'
+  name: 'PageBlog',
+  components: { TBlogCard }
 }
 </script>
