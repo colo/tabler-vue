@@ -122,36 +122,6 @@ export default {
       type: String,
       default: 'icon d-none d-md-inline-block ml-3 text-red'
     }
-    // actions: {
-    //   type: Array,
-    //   default: function () {
-    //     return [
-    //       {label: 'Chat', to: {path: '#'}, variant: 'white'},
-    //       {label: 'Profile', to: {path: '#'}, variant: 'white'}
-    //     ]
-    //   }
-    // },
-    // status: {
-    //   type: Object,
-    //   default: function () {
-    //     return {
-    //       label: 'offline',
-    //       class: undefined
-    //     }
-    //   }
-    // },
-    // progress: {
-    //   type: Object,
-    //   default: function () {
-    //     return {
-    //       title: 'Progress',
-    //       label: undefined,
-    //       class: 'bg-blue',
-    //       value: 50,
-    //       max: 100,
-    //     }
-    //   }
-    // }
 
   },
   // data () {

@@ -50,7 +50,7 @@
 import { BCard, BProgress, BProgressBar, BButton, BLink, BRow, BCol } from 'bootstrap-vue'
 
 export default {
-  name: 'TUserCard',
+  name: 'TUserCardProgress',
   components: { BCard, BProgress, BProgressBar, BButton, BLink, BRow, BCol },
 
   props: {

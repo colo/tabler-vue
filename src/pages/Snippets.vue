@@ -169,7 +169,21 @@
         </a>
       </div>
       <div class="col-xl-6">
-        <div class="card">
+        <t-user-card-status
+          name="Paweł Kuna"
+          title="Working in Yombu"
+          avatar="./static/avatars/000m.jpg"
+          :to="{ name: 'profile' }"
+          :actions="[
+            {label: 'Chat', to: {path: '#'}, variant: 'info'},
+            {label: 'Profile', to: {path: '#'}, variant: 'outline-info'}
+          ]"
+          :status="{
+            label: 'online'
+          }"
+        />
+
+        <!-- <div class="card">
           <div class="card-body">
             <div class="row row-sm align-items-center">
               <div class="col-auto">
@@ -193,7 +207,6 @@
               </div>
               <div class="col-auto">
                 <b-dropdown  size="sm" variant="link" toggle-class="text-decoration-none btn-options" no-caret right>
-                  <!-- Using 'button-content' slot -->
                   <template v-slot:button-content>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="1" /><circle cx="12" cy="19" r="1" /><circle cx="12" cy="5" r="1" /></svg>
                   </template>
@@ -206,23 +219,10 @@
                   </b-dropdown-item>
 
                 </b-dropdown>
-                <!-- <div class="dropdown">
-                  <button class="btn-options" type="button" data-toggle="dropdown">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="1" /><circle cx="12" cy="19" r="1" /><circle cx="12" cy="5" r="1" /></svg>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">
-                      Action
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </div>
-                </div> -->
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-xl-6">
         <div class="card">
@@ -894,6 +894,7 @@ import Peity from 'vue-peity'
 import TUserCardMini from 'components/TUserCardMini'
 import TUserCard from 'components/TUserCard'
 import TUserCardCover from 'components/TUserCardCover'
+import TUserCardStatus from 'components/TUserCardStatus'
 
 export default {
   name: 'PageEmpty',
@@ -904,7 +905,8 @@ export default {
     BDropdownItem,
     TUserCardMini,
     TUserCard,
-    TUserCardCover
+    TUserCardCover,
+    TUserCardStatus
   },
 
 }

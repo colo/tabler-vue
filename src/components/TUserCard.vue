@@ -10,7 +10,7 @@
     <a href="#" class="card-btn">View full profile</a>
   </div> -->
 
-  <b-card body-class="text-center" footer-class="text-center card-btn" footer-border-variant="white">
+  <b-card body-class="text-center" footer-class="text-center card-btn" :footer-border-variant="(dark) ? 'dark' : 'white'">
     <div class="mb-3">
       <span v-if="processedAvatar" class="avatar avatar-xl" :style="processedAvatar"></span>
       <span v-else class="avatar avatar-xl">{{processedName}}</span>
@@ -39,8 +39,10 @@
 <script>
 import { BCard, BLink } from 'bootstrap-vue'
 
+import { mapState } from 'vuex'
+
 export default {
-  name: 'TUserCardMini',
+  name: 'TUserCard',
   components: { BCard, BLink },
 
   props: {
@@ -126,6 +128,9 @@ export default {
 
       return name
     },
+    ...mapState({
+      dark: state => state.layout.dark,
+    }),
     // statusClass: function () {
     //   if (this.status && !this.status.class) {
     //     if (this.status.label.toLowerCase() === 'online') return 'bg-green-lt'

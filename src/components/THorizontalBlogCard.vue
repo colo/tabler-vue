@@ -69,7 +69,7 @@
 import { BCard, BCardText, BLink, BCardImg, BRow, BCol } from 'bootstrap-vue'
 
 export default {
-  name: 'TBlogCard',
+  name: 'THorizontalBlogCard',
   components: { BCard, BCardText, BLink, BCardImg, BRow, BCol },
 
   props: {
