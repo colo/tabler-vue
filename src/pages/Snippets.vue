@@ -63,7 +63,7 @@
         </a>
       </div>
       <div class="col-md-6 col-xl-3">
-        <t-user-card-mini
+        <t-user-card
           name="Thatcher Keel"
           title="VP Sales"
           avatar="./static/avatars/010m.jpg"
@@ -885,6 +885,7 @@ import { BDropdown, BDropdownItem } from 'bootstrap-vue'
 import Peity from 'vue-peity'
 
 import TUserCardMini from 'components/TUserCardMini'
+import TUserCard from 'components/TUserCard'
 
 export default {
   name: 'PageEmpty',
@@ -893,7 +894,8 @@ export default {
     Peity,
     BDropdown,
     BDropdownItem,
-    TUserCardMini
+    TUserCardMini,
+    TUserCard
   },
 
 }
