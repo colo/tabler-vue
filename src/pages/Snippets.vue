@@ -117,7 +117,14 @@
         </div>
       </div>
       <div class="col-md-6 col-xl-3">
-        <a class="card card-link" href="#">
+        <t-user-card-cover
+          name="Marsha Labat"
+          title="Research Associate"
+          avatar="./static/avatars/012f.jpg"
+          cover="./static/photos/2854fd67ddbd6217.jpg"
+          :to="{ name: 'profile' }"
+        />
+        <!-- <a class="card card-link" href="#">
           <div class="card-cover text-center" style="background-image: url(./static/photos/2854fd67ddbd6217.jpg
 )">
             <span class="avatar avatar-xl avatar-thumb" style="background-image: url(./static/avatars/012f.jpg)"></span>
@@ -126,7 +133,7 @@
             <div class="card-title mb-1">Marsha Labat</div>
             <div class="text-muted">Research Associate</div>
           </div>
-        </a>
+        </a> -->
       </div>
       <div class="col-md-6 col-xl-3">
         <a class="card card-link" href="#">
@@ -886,6 +893,7 @@ import Peity from 'vue-peity'
 
 import TUserCardMini from 'components/TUserCardMini'
 import TUserCard from 'components/TUserCard'
+import TUserCardCover from 'components/TUserCardCover'
 
 export default {
   name: 'PageEmpty',
@@ -895,7 +903,8 @@ export default {
     BDropdown,
     BDropdownItem,
     TUserCardMini,
-    TUserCard
+    TUserCard,
+    TUserCardCover
   },
 
 }

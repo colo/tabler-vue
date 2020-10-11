@@ -1,46 +1,34 @@
 <template>
-  <!-- <div class="card">
+  <!-- <a class="card card-link" href="#">
+    <div class="card-cover text-center" style="background-image: url(./static/photos/2854fd67ddbd6217.jpg
+)">
+      <span class="avatar avatar-xl avatar-thumb" style="background-image: url(./static/avatars/012f.jpg)"></span>
+    </div>
     <div class="card-body text-center">
-      <div class="mb-3">
-        <span class="avatar avatar-xl" style="background-image: url(./static/avatars/010m.jpg)"></span>
+      <div class="card-title mb-1">Marsha Labat</div>
+      <div class="text-muted">Research Associate</div>
+    </div>
+  </a> -->
+  <b-link :to="to" class="card-link">
+    <b-card no-body>
+      <div v-if="processedCover" class="card-cover text-center" :style="processedCover">
+        <span v-if="processedAvatar" class="avatar avatar-xl avatar-thumb" :style="processedAvatar"></span>
+        <span v-else class="avatar avatar-xl avatar-thumb">{{processedName}}</span>
       </div>
-      <div class="card-title mb-1">Thatcher Keel</div>
-      <div class="text-muted">VP Sales</div>
-    </div>
-    <a href="#" class="card-btn">View full profile</a>
-  </div> -->
+      <div class="card-body text-center">
+        <div class="card-title mb-1">{{name}}</div>
+        <div class="text-muted">{{title}}</div>
+      </div>
 
-  <b-card body-class="text-center" footer-class="text-center card-btn" footer-border-variant="white">
-    <div class="mb-3">
-      <span v-if="processedAvatar" class="avatar avatar-xl" :style="processedAvatar"></span>
-      <span v-else class="avatar avatar-xl">{{processedName}}</span>
-    </div>
-    <div class="card-title mb-1">{{name}}</div>
-    <div class="text-muted">{{title}}</div>
-
-    <!-- <footer class="text-center card-bt">
-      <b-link :to="to">
-        <div :style="{display: 'block'}">
-        View full profile
-        </div>
-      </b-link>
-    </footer> -->
-    <template v-slot:footer>
-      <b-link :to="to">
-        <div>
-        View full profile
-        </div>
-      </b-link>
-    </template>
-  </b-card>
-
+    </b-card>
+  </b-link>
 </template>
 
 <script>
 import { BCard, BLink } from 'bootstrap-vue'
 
 export default {
-  name: 'TUserCardMini',
+  name: 'TUserCardCover',
   components: { BCard, BLink },
 
   props: {
@@ -56,6 +44,12 @@ export default {
       type: [Object, String, Boolean],
       default: function () {
         return { 'background-image': 'url(./static/avatars/000m.jpg)' }
+      }
+    },
+    cover: {
+      type: [Object, String, Boolean],
+      default: function () {
+        return { 'background-image': 'url(./static/photos/2854fd67ddbd6217.jpg)' }
       }
     },
     to: {
@@ -96,17 +90,7 @@ export default {
     // }
 
   },
-  // data () {
-  //   return {
-  //     default_progress: {
-  //       title: 'Progress',
-  //       label: undefined,
-  //       class: 'bg-blue',
-  //       value: 50,
-  //       max: 100,
-  //     }
-  //   }
-  // },
+
   computed: {
     processedAvatar: function () {
       if (typeof this.avatar === 'string') {
@@ -115,6 +99,15 @@ export default {
         return false
       } else {
         return this.avatar
+      }
+    },
+    processedCover: function () {
+      if (typeof this.cover === 'string') {
+        return { 'background-image': 'url(' + this.cover + ')' }
+      } else if (this.cover === null || this.cover === false || this.cover === undefined) {
+        return false
+      } else {
+        return this.cover
       }
     },
     processedName: function () {
