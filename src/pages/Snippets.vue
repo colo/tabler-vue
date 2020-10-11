@@ -174,10 +174,6 @@
           title="Working in Yombu"
           avatar="./static/avatars/000m.jpg"
           :to="{ name: 'profile' }"
-          :actions="[
-            {label: 'Chat', to: {path: '#'}, variant: 'info'},
-            {label: 'Profile', to: {path: '#'}, variant: 'outline-info'}
-          ]"
           :status="{
             label: 'online'
           }"
@@ -225,7 +221,21 @@
         </div> -->
       </div>
       <div class="col-xl-6">
-        <div class="card">
+        <t-user-card-status
+          name="Mallory Hulme"
+          title="Working in Kare"
+          avatar="./static/avatars/002m.jpg"
+          :to="{ name: 'profile' }"
+          :action="{label: 'Suscribe', to: {path: '#'}, variant: 'outline-info'}"
+          :menu="[
+            {label: 'Chat', to: {path: '#'}},
+            /* {label: 'Profile', to: {path: '#'}, variant: 'outline-info'} */
+          ]"
+          :status="{
+            label: 'online'
+          }"
+        />
+        <!-- <div class="card">
           <div class="card-body">
             <div class="row row-sm align-items-center">
               <div class="col-auto">
@@ -249,7 +259,6 @@
               </div>
               <div class="col-auto">
                 <b-dropdown  size="sm" variant="link" toggle-class="text-decoration-none btn-options" no-caret right>
-                  <!-- Using 'button-content' slot -->
                   <template v-slot:button-content>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="1" /><circle cx="12" cy="19" r="1" /><circle cx="12" cy="5" r="1" /></svg>
                   </template>
@@ -262,26 +271,14 @@
                   </b-dropdown-item>
 
                 </b-dropdown>
-                <!-- <div class="dropdown">
-                  <button class="btn-options" type="button" data-toggle="dropdown">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="1" /><circle cx="12" cy="19" r="1" /><circle cx="12" cy="5" r="1" /></svg>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">
-                      Action
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </div>
-                </div> -->
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-xl-3">
-        <div class="card card-sm">
+        <t-card-mini />
+        <!-- <div class="card card-sm">
           <div class="card-body d-flex align-items-center">
             <span class="bg-blue text-white stamp mr-3"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" /><path d="M12 3v3m0 12v3" /></svg>
             </span>
@@ -292,10 +289,16 @@
               <div class="text-muted">12 waiting payments</div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-xl-3">
-        <div class="card card-sm">
+        <t-card-mini
+          title="78 Orders"
+          subtitle="32 shipped"
+          icon="<svg xmlns='http://www.w3.org/2000/svg' class='icon' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z'/><circle cx='9' cy='19' r='2' /><circle cx='17' cy='19' r='2' /><path d='M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2' />"
+          icon-class="bg-green text-white stamp "
+        />
+        <!-- <div class="card card-sm">
           <div class="card-body d-flex align-items-center">
             <span class="bg-green text-white stamp mr-3"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="9" cy="19" r="2" /><circle cx="17" cy="19" r="2" /><path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" /></svg>
             </span>
@@ -306,7 +309,7 @@
               <div class="text-muted">32 shipped</div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-xl-3">
         <div class="card card-sm">
@@ -337,7 +340,30 @@
         </div>
       </div>
       <div class="col-md-6 col-xl-3">
-        <div class="card card-sm">
+        <t-card-mini
+          title="132 Sales"
+          subtitle="12 waiting payments"
+        >
+          <div class="mr-3">
+            <div class="chart-sparkline chart-sparkline-square">
+              <peity
+                :type="'pie'"
+                :options="{
+                  width: 40,
+                  height: 40,
+                  stroke: '#206bc4',
+                  strokeWidth: 2,
+                  fill: ['#206bc4', 'rgba(110, 117, 130, 0.2)'],
+                  padding: .2,
+                  innerRadius: 17,
+                }"
+                :data="'56/100'"
+              >
+              </peity>
+            </div>
+          </div>
+        </t-card-mini>
+        <!-- <div class="card card-sm">
           <div class="card-body d-flex align-items-center">
             <div class="mr-3">
               <div class="chart-sparkline chart-sparkline-square" id="sparkline-76">
@@ -364,10 +390,33 @@
               <div class="text-muted">12 waiting payments</div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-xl-3">
-        <div class="card card-sm">
+        <t-card-mini
+          title="78 Orders"
+          subtitle="32 shipped"
+        >
+          <div class="mr-3">
+            <div class="chart-sparkline chart-sparkline-square" id="sparkline-77">
+              <peity
+                :type="'pie'"
+                :options="{
+                  width: 40,
+                  height: 40,
+                  stroke: '#5eba00',
+                  strokeWidth: 2,
+                  fill: ['#5eba00', 'rgba(110, 117, 130, 0.2)'],
+                  padding: .2,
+                  innerRadius: 17,
+                }"
+                :data="'56/100'"
+              >
+              </peity>
+            </div>
+          </div>
+        </t-card-mini>
+        <!-- <div class="card card-sm">
           <div class="card-body d-flex align-items-center">
             <div class="mr-3">
               <div class="chart-sparkline chart-sparkline-square" id="sparkline-77">
@@ -394,7 +443,7 @@
               <div class="text-muted">32 shipped</div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6 col-xl-3">
         <div class="card card-sm">
@@ -896,6 +945,8 @@ import TUserCard from 'components/TUserCard'
 import TUserCardCover from 'components/TUserCardCover'
 import TUserCardStatus from 'components/TUserCardStatus'
 
+import TCardMini from 'components/TCardMini'
+
 export default {
   name: 'PageEmpty',
 
@@ -906,7 +957,8 @@ export default {
     TUserCardMini,
     TUserCard,
     TUserCardCover,
-    TUserCardStatus
+    TUserCardStatus,
+    TCardMini
   },
 
 }
