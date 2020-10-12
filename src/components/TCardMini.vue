@@ -1,11 +1,15 @@
 <template>
-  <b-link :to="to" class="card-link">
+  <b-link :to="to" :class="(dark) ? 'text-white' : 'text-black'">
+    <!-- class="card-link" -->
     <b-card tag="a" class="card-sm" body-class="d-flex align-items-center">
-      <slot><span class="mr-3" :class="iconClass" v-html="icon"></span></slot>
+      <slot><span v-if="icon !== ''" class="mr-3" :class="iconClass" v-html="icon"></span></slot>
 
       <div class="mr-3 lh-sm">
         <div class="strong">{{title}}</div>
         <div class="text-muted">{{subtitle}}</div>
+      </div>
+      <div class="ml-auto">
+        <slot name="right"></slot>
       </div>
     </b-card>
   </b-link>
@@ -13,6 +17,8 @@
 
 <script>
 import { BCard, BLink } from 'bootstrap-vue'
+
+import { mapState } from 'vuex'
 
 export default {
   name: 'TCardMini',
@@ -45,7 +51,9 @@ export default {
   },
 
   computed: {
-
+    ...mapState({
+      dark: state => state.layout.dark,
+    }),
   }
 }
 </script>
