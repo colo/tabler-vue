@@ -12,7 +12,21 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <div class="card">
+        <b-tabs content-class="card-body" :class="'card'">
+          <b-tab title="Home" title-link-class="nav-link" >
+            Cursus turpis vestibulum, dui in pharetra vulputate id sed non turpis ultricies fringilla at sed facilisis lacus pellentesque purus nibh
+          </b-tab>
+          <b-tab title="Profile" title-link-class="nav-link">
+            Fringilla egestas nunc quis tellus diam rhoncus ultricies tristique enim at diam, sem nunc amet, pellentesque id egestas velit sed
+          </b-tab>
+          <b-tab title-item-class="ml-auto" title-link-class="nav-link">
+            <template v-slot:title>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" /></svg>
+            </template>
+              Donec ac vitae diam amet vel leo egestas consequat rhoncus in luctus amet, facilisi sit mauris accumsan nibh habitant senectus
+          </b-tab>
+        </b-tabs>
+        <!-- <div class="card">
           <ul class="nav nav-tabs" data-toggle="tabs">
             <li class="nav-item">
               <a href="#tabs-home-86" class="nav-link active" data-toggle="tab">Home</a>
@@ -38,10 +52,24 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-4">
-        <div class="card">
+        <b-tabs content-class="card-body" :class="'card'" nav-class="flex-row-reverse ">
+          <b-tab title="Home" title-link-class="nav-link" >
+            Cursus turpis vestibulum, dui in pharetra vulputate id sed non turpis ultricies fringilla at sed facilisis lacus pellentesque purus nibh
+          </b-tab>
+          <b-tab title="Profile" title-link-class="nav-link">
+            Fringilla egestas nunc quis tellus diam rhoncus ultricies tristique enim at diam, sem nunc amet, pellentesque id egestas velit sed
+          </b-tab>
+          <b-tab title-item-class="mr-auto" title-link-class="nav-link">
+            <template v-slot:title>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" /></svg>
+            </template>
+              Donec ac vitae diam amet vel leo egestas consequat rhoncus in luctus amet, facilisi sit mauris accumsan nibh habitant senectus
+          </b-tab>
+        </b-tabs>
+        <!-- <div class="card">
           <ul class="nav nav-tabs flex-row-reverse" data-toggle="tabs">
             <li class="nav-item">
               <a href="#tabs-home-87" class="nav-link active" data-toggle="tab">Home</a>
@@ -67,7 +95,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-4">
         <div class="card">
@@ -176,7 +204,38 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
+        <b-tabs content-class="card-body" :class="'card'">
+          <b-tab title="Home" title-link-class="nav-link" >
+            Cursus turpis vestibulum, dui in pharetra vulputate id sed non turpis ultricies fringilla at sed facilisis lacus pellentesque purus nibh
+          </b-tab>
+          <b-tab title="Profile" title-link-class="nav-link">
+            Fringilla egestas nunc quis tellus diam rhoncus ultricies tristique enim at diam, sem nunc amet, pellentesque id egestas velit sed
+          </b-tab>
+          <b-tab title-link-class="nav-link">
+            <template v-slot:title>
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" /></svg> -->
+              <b-dropdown variant="link" toggle-class="text-decoration-none btn-options" no-caret>
+                <!-- Using 'button-content' slot -->
+                <template v-slot:button-content>
+                  <a class="dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                </template>
+
+                <b-dropdown-item>
+                  Action
+                </b-dropdown-item>
+
+                <b-dropdown-item>
+                  Another action
+                </b-dropdown-item>
+
+              </b-dropdown>
+            </template>
+              <!-- Donec ac vitae diam amet vel leo egestas consequat rhoncus in luctus amet, facilisi sit mauris accumsan nibh habitant senectus -->
+          </b-tab>
+        </b-tabs>
+        <!-- <div class="card">
           <ul class="nav nav-tabs" data-toggle="tabs">
             <li class="nav-item">
               <a href="#tabs-home-92" class="nav-link active" data-toggle="tab">Home</a>
@@ -206,7 +265,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-4">
         <div class="card">
@@ -325,7 +384,11 @@
 </template>
 
 <script>
+import { BTabs, BTab, BDropdown, BDropdownItem } from 'bootstrap-vue'
+
 export default {
-  name: 'PageTabs'
+  name: 'PageTabs',
+
+  components: { BTabs, BTab, BDropdown, BDropdownItem }
 }
 </script>
