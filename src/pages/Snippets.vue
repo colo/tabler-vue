@@ -799,11 +799,14 @@
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="card">
-          <div class="progress card-progress">
+          <b-progress :max="100" height="4px">
+            <b-progress-bar :value="20" :class="'bg-red'"></b-progress-bar>
+          </b-progress>
+          <!-- <div class="progress card-progress">
             <div class="progress-bar bg-red" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
               <span class="sr-only">20% Complete</span>
             </div>
-          </div>
+          </div> -->
           <div class="card-body">
             <div class="dropdown card-options">
               <b-dropdown size="sm" variant="link" toggle-class="text-decoration-none btn-options" no-caret right>
@@ -820,17 +823,6 @@
                 </b-dropdown-item>
 
               </b-dropdown>
-              <!-- <button class="btn-options" type="button" data-toggle="dropdown">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="1" /><circle cx="12" cy="19" r="1" /><circle cx="12" cy="5" r="1" /></svg>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">
-                  Action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-              </div> -->
             </div>
             <div class="card-title">
               <h6 class="h4 mb-3"><a href="#">Tabler UI</a> <span class="badge">v1.0</span></h6>
@@ -851,11 +843,9 @@
           </div>
         </div>
         <div class="card">
-          <div class="progress card-progress">
-            <div class="progress-bar bg-green" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-              <span class="sr-only">20% Complete</span>
-            </div>
-          </div>
+          <b-progress :max="100" height="4px">
+            <b-progress-bar :value="20" :class="'bg-green'"></b-progress-bar>
+          </b-progress>
           <div class="card-body">
             <div class="dropdown card-options">
               <b-dropdown size="sm" variant="link" toggle-class="text-decoration-none btn-options" no-caret right>
@@ -872,31 +862,7 @@
                 </b-dropdown-item>
 
               </b-dropdown>
-              <!-- <button class="btn-options" type="button" data-toggle="dropdown">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="1" /><circle cx="12" cy="19" r="1" /><circle cx="12" cy="5" r="1" /></svg>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">
-                  Action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-              </div> -->
             </div>
-            <!-- <div class="dropdown card-options">
-              <button class="btn-options" type="button" data-toggle="dropdown">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="1" /><circle cx="12" cy="19" r="1" /><circle cx="12" cy="5" r="1" /></svg>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">
-                  Action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-              </div>
-            </div> -->
             <div class="card-title">
               <h6 class="h4 mb-3"><a href="#">Tabler React</a></h6>
             </div>
@@ -984,7 +950,7 @@
 </template>
 
 <script>
-import { BDropdown, BDropdownItem } from 'bootstrap-vue'
+import { BDropdown, BDropdownItem, BProgress, BProgressBar } from 'bootstrap-vue'
 import Peity from 'vue-peity'
 
 import TUserCardMini from 'components/TUserCardMini'
@@ -1001,6 +967,8 @@ export default {
     Peity,
     BDropdown,
     BDropdownItem,
+    BProgress,
+    BProgressBar,
     TUserCardMini,
     TUserCard,
     TUserCardCover,
