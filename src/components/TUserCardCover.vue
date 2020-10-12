@@ -10,7 +10,7 @@
     </div>
   </a> -->
   <b-link :to="to" class="card-link">
-    <b-card no-body>
+    <b-card tag="a" no-body>
       <div v-if="processedCover" class="card-cover text-center" :style="processedCover">
         <span v-if="processedAvatar" class="avatar avatar-xl avatar-thumb" :style="processedAvatar"></span>
         <span v-else class="avatar avatar-xl avatar-thumb">{{processedName}}</span>
