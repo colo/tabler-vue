@@ -2,7 +2,7 @@
   <b-navbar-nav >
     <!-- for vertical class="pt-lg-3" -->
     <template v-for="(item, index) in list">
-      <b-nav-item v-if="!item.list || item.list.length === 0" :to="item.to" :key="index">
+      <b-nav-item v-if="!item.list || item.list.length === 0" :to="item.to" :key="index" :class="( processActive(item) === true ) ? 'active' : ''">
           <span v-if="item.icon" class="nav-link-icon d-md-none d-lg-inline-block" v-html="item.icon"></span>
           <span class="nav-link-title">
             {{item.label}}
@@ -10,12 +10,12 @@
       </b-nav-item>
 
       <!-- Dropdown -->
-      <b-nav-item-dropdown v-else :menu-class="(item.columns) ? 'dropdown-menu-columns dropdown-menu-columns-'+item.columns : ''" :key="index">
+      <b-nav-item-dropdown v-else :menu-class="(item.columns) ? 'dropdown-menu-columns dropdown-menu-columns-'+item.columns : ''" :key="index" :class="( processActive(item) === true ) ? 'active' : ''">
         <template v-slot:button-content>
           <span v-if="item.icon" class="nav-link-icon d-md-none d-lg-inline-block" v-html="item.icon"></span>
           {{item.label}}
         </template>
-        <b-dropdown-item v-for="(subitem, subindex) in item.list" :to="subitem.to" :key="index+'.'+subindex">
+        <b-dropdown-item v-for="(subitem, subindex) in item.list" :to="subitem.to" :key="index+'.'+subindex" exact exact-active-class="active">
           <span v-if="subitem.icon" class="nav-link-icon d-md-none d-lg-inline-block" v-html="subitem.icon"></span>
           {{subitem.label}}
         </b-dropdown-item>
@@ -130,6 +130,10 @@
 </template>
 
 <script>
+import * as Debug from 'debug'
+const debug = Debug('components:layout:navbar:list')
+debug.log = console.log.bind(console) // don't forget to bind to console!
+
 import { BNavbarNav, BNavItem, BNavItemDropdown, BDropdownItem } from 'bootstrap-vue'
 
 export default {
@@ -143,14 +147,22 @@ export default {
       }
     }
   },
-  // computed: {
-  //   ulClass: function () {
-  //     let appendClass = ''
-  //     appendClass += (this.vertical === true) ? 'pt-lg-3 ' : ''
-  //
-  //     return appendClass
-  //   },
-  //
-  // }
+  methods: {
+    processActive: function (item) {
+      debug('processActive', item, this.$route)
+      if (item && item.list && item.list.length > 0) {
+        let active = false
+        for (let i = 0; i < item.list.length; i++) {
+          let _item = item.list[i]
+          active = this.processActive(_item)
+          if (active === true) { i = item.list.length }
+        }
+
+        return active
+      } else if (item && item.to && (item.to.path === this.$route.path || item.to.name === this.$route.name)) return true
+      return false
+    },
+
+  }
 }
 </script>
