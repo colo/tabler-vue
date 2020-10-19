@@ -39,10 +39,10 @@ export default Vue.extend({
     //   type: Boolean,
     //   default: false
     // }
-    // background: {
-    //   type: String,
-    //   default: '' // #7952b3
-    // }
+    user: {
+      type: [Boolean, Object],
+      default: false
+    }
   },
   computed: {
     darkTopBar: function () {

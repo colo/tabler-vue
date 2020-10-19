@@ -1,6 +1,6 @@
 <template>
   <div id="q-app">
-    <component :is="this.$route.meta.layout || this.mode">
+    <component :is="this.$route.meta.layout || this.mode" :user="user">
       <router-view />
     </component>
   </div>
@@ -15,7 +15,7 @@ import { IconsPlugin } from 'bootstrap-vue' // BootstrapVue
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 /**
 * Dynamic Layout
@@ -27,6 +27,10 @@ import EmptyLayout from './layouts/EmptyLayout.vue'
 
 import TestLayout from './layouts/TestLayout.vue'
 
+// let mootools = require('mootools')
+// import DefaultConn from '@etc/default.http'
+// let http = Object.merge(Object.clone(DefaultConn), { path: DefaultConn.path + 'user' })
+
 export default {
   name: 'App',
   components: {
@@ -37,8 +41,24 @@ export default {
   },
   computed: {
     // ...mapState({
-    //   menuAutoExpand: state => state.layout.menuAutoExpand
+    //   user: state => state.user.current
     // }),
+    user: function () {
+      if (this.$store.state.user.data && this.$store.state.user.data.role) {
+        return {
+          name: this.$store.state.user.data.name + ' ' + this.$store.state.user.data.surname,
+          title: this.$store.state.user.data.role,
+          avatar: this.$store.state.user.data.avatar,
+          actions: this.$store.state.user.data.actions,
+          // actions: [{
+          //   label: 'Sign out',
+          //   to: { path: 'signout'}
+          // }]
+        }
+      }
+
+      return this.$store.state.layout[this.mode].user
+    },
     mode: {
       get () {
         if (!this.$store.state.layout.mode || this.$store.state.layout.mode === undefined) {
@@ -59,10 +79,13 @@ export default {
   mounted: function () {
     // console.log('mounted', this.mode, this.$route)
     if (this.mode === false) { this.mode = 'HorizontalLayout' }
+
+    // this.loadUser(http.scheme + '://' + http.host + ':' + http.port + http.path)
   },
   methods: {
     ...mapActions({
       setMode: 'layout/setMode',
+      loadUser: 'user/load'
     }),
 
   },

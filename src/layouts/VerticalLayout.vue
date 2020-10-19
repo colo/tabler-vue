@@ -95,7 +95,7 @@ export default Vue.extend({
       smallLogo: state => state.layout.VerticalLayout.smallLogo,
       logo: state => state.layout.VerticalLayout.logo,
       search: state => state.layout.VerticalLayout.search,
-      user: state => state.layout.VerticalLayout.user,
+      // user: state => state.layout.VerticalLayout.user,
       alerts: state => state.layout.VerticalLayout.alerts,
       settings: state => state.layout.VerticalLayout.settings,
       // fluid: state => state.layout.fluid,

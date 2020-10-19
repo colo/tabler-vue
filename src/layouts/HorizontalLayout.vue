@@ -99,7 +99,7 @@ export default Vue.extend({
       smallLogo: state => state.layout.HorizontalLayout.smallLogo,
       logo: state => state.layout.HorizontalLayout.logo,
       search: state => state.layout.HorizontalLayout.search,
-      user: state => state.layout.HorizontalLayout.user,
+      // user: state => state.layout.HorizontalLayout.user,
       alerts: state => state.layout.HorizontalLayout.alerts,
       settings: state => state.layout.HorizontalLayout.settings,
     }),
