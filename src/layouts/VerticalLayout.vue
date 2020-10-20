@@ -108,6 +108,9 @@ export default Vue.extend({
       return appendClass
     },
   },
+  // mounted: function () {
+  //   this.loadUser(this.httpServer.scheme + '://' + this.httpServer.host + ':' + this.httpServer.port + this.httpServer.path)
+  // },
   data () {
     return {
     }

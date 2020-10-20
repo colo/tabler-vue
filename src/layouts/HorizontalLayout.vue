@@ -36,6 +36,10 @@
 </template>
 
 <script>
+import * as Debug from 'debug'
+const debug = Debug('layouts:Horizontal')
+debug.log = console.log.bind(console) // don't forget to bind to console!
+
 import Vue from 'vue'
 import { mapActions, mapState } from 'vuex'
 
@@ -112,6 +116,9 @@ export default Vue.extend({
     },
 
   },
-
+  // mounted: function () {
+  //   debug('mounted')
+  //   this.loadUser(this.httpServer.scheme + '://' + this.httpServer.host + ':' + this.httpServer.port + this.httpServer.path)
+  // },
 })
 </script>

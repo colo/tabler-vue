@@ -1,11 +1,15 @@
 <template>
   <div id="q-app">
-    <component :is="this.$route.meta.layout || this.mode" :user="user">
+    <component :is="$route.meta.layout || this.mode">
       <router-view />
     </component>
   </div>
 </template>
 <script>
+import * as Debug from 'debug'
+const debug = Debug('App')
+debug.log = console.log.bind(console) // don't forget to bind to console!
+
 import Vue from 'vue'
 
 import { IconsPlugin } from 'bootstrap-vue' // BootstrapVue
@@ -43,22 +47,20 @@ export default {
     // ...mapState({
     //   user: state => state.user.current
     // }),
-    user: function () {
-      if (this.$store.state.user.data && this.$store.state.user.data.role) {
-        return {
-          name: this.$store.state.user.data.name + ' ' + this.$store.state.user.data.surname,
-          title: this.$store.state.user.data.role,
-          avatar: this.$store.state.user.data.avatar,
-          actions: this.$store.state.user.data.actions,
-          // actions: [{
-          //   label: 'Sign out',
-          //   to: { path: 'signout'}
-          // }]
-        }
-      }
-
-      return this.$store.state.layout[this.mode].user
-    },
+    // user: function () {
+    //   if (this.$store.state.user.data && this.$store.state.user.data.role) {
+    //     return {
+    //       name: this.$store.state.user.data.name + ' ' + this.$store.state.user.data.surname,
+    //       title: this.$store.state.user.data.role,
+    //       actions: [{
+    //         label: 'Sign out',
+    //         to: { path: 'signout'}
+    //       }]
+    //     }
+    //   }
+    //
+    //   return this.$store.state.layout[this.mode].user
+    // },
     mode: {
       get () {
         if (!this.$store.state.layout.mode || this.$store.state.layout.mode === undefined) {
@@ -75,8 +77,11 @@ export default {
   created: function () {
     // console.log('created', this.mode, this.$route)
     if (this.mode === false) { this.mode = 'HorizontalLayout' }
+
+    // this.loadUser(http.scheme + '://' + http.host + ':' + http.port + http.path)
   },
   mounted: function () {
+    debug('mounted', this.$route)
     // console.log('mounted', this.mode, this.$route)
     if (this.mode === false) { this.mode = 'HorizontalLayout' }
 
@@ -85,7 +90,7 @@ export default {
   methods: {
     ...mapActions({
       setMode: 'layout/setMode',
-      loadUser: 'user/load'
+      // loadUser: 'user/load'
     }),
 
   },
