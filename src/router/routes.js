@@ -11,9 +11,11 @@ import Empty from 'pages/Empty.vue'
 import Blank from 'pages/Blank.vue'
 import Buttons from 'pages/Buttons.vue'
 import Cards from 'pages/Cards.vue'
+import CardsMasonry from 'pages/CardsMasonry.vue'
 import Dropdowns from 'pages/Dropdowns.vue'
 import Icons from 'pages/Icons.vue'
 import Modals from 'pages/Modals.vue'
+import Skeleton from 'pages/Skeleton.vue'
 import Tables from 'pages/Tables.vue'
 import Calendar from 'pages/Calendar.vue'
 import Carousel from 'pages/Carousel.vue'
@@ -21,10 +23,11 @@ import Lists from 'pages/Lists.vue'
 import Form from 'pages/Form.vue'
 import Invoice from 'pages/Invoice.vue'
 import Blog from 'pages/Blog.vue'
-import Snippets from 'pages/Snippets.vue'
+import Widgets from 'pages/Widgets.vue'
 import Search from 'pages/Search.vue'
 import Pricing from 'pages/Pricing.vue'
 import Users from 'pages/Users.vue'
+import License from 'pages/License.vue'
 import Gallery from 'pages/Gallery.vue'
 import Profile from 'pages/Profile.vue'
 import Music from 'pages/Music.vue'
@@ -32,7 +35,9 @@ import Welcome from 'pages/Welcome.vue'
 import Signin from 'pages/Signin.vue'
 import Signup from 'pages/Signup.vue'
 import Tos from 'pages/Tos.vue'
+import AuthLock from 'pages/AuthLock.vue'
 import Typography from 'pages/Typography.vue'
+import Markdown from 'pages/Markdown.vue'
 import Tabs from 'pages/Tabs.vue'
 import Ribbons from 'pages/Ribbons.vue'
 import Maintenance from 'pages/Maintenance.vue'
@@ -40,6 +45,8 @@ import Lookup from 'pages/Lookup.vue'
 import ForgotPassword from 'pages/ForgotPassword.vue'
 import Email from 'pages/Email.vue'
 import Error from 'pages/Error.vue'
+import Activity from 'pages/Activity.vue'
+import Wizard from 'pages/Wizard.vue'
 
 const routes = [
   {
@@ -75,6 +82,12 @@ const routes = [
     // meta: { layout: 'VerticalLayout' },
   },
   {
+    path: '/cards-masonry',
+    name: 'cards-masonry',
+    component: CardsMasonry,
+    // meta: { layout: 'VerticalLayout' },
+  },
+  {
     path: '/dropdowns',
     name: 'dropdowns',
     component: Dropdowns,
@@ -92,6 +105,13 @@ const routes = [
     component: Modals,
     // meta: { layout: 'VerticalLayout' },
   },
+  {
+    path: '/skeleton',
+    name: 'skeleton',
+    component: Skeleton,
+    // meta: { layout: 'VerticalLayout' },
+  },
+
   {
     path: '/tables',
     name: 'tables',
@@ -122,9 +142,45 @@ const routes = [
     component: Form,
     // meta: { layout: 'VerticalLayout' },
   },
+  {
+    path: '/typography',
+    name: 'typography',
+    component: Typography,
+  },
+  {
+    path: '/markdown',
+    name: 'markdown',
+    component: Markdown,
+  },
+
+  {
+    path: '/tabs',
+    name: 'tabs',
+    component: Tabs,
+  },
+  {
+    path: '/error404',
+    component: Error,
+    name: 'error404',
+    props: { number: 404, title: 'Oops… You just found an error page', subtitle: 'We are sorry but the page you are looking for was not found'},
+    meta: { layout: 'EmptyLayout' },
+  },
+  {
+    path: '/error500',
+    component: Error,
+    name: 'error500',
+    props: { number: 500, title: 'Oops… You just found an error page', subtitle: 'We are sorry but the page you are looking for was not found'},
+    meta: { layout: 'EmptyLayout' },
+  },
   /**
   * Extras
   **/
+  {
+    path: '/activity',
+    name: 'activity',
+    component: Activity,
+    // meta: { layout: 'VerticalLayout' },
+  },
   {
     path: '/invoice',
     name: 'invoice',
@@ -138,10 +194,16 @@ const routes = [
     // meta: { layout: 'VerticalLayout' },
   },
   {
-    path: '/snippets',
-    name: 'snippets',
-    component: Snippets,
+    path: '/widgets',
+    name: 'widgets',
+    component: Widgets,
     // meta: { layout: 'VerticalLayout' },
+  },
+  {
+    path: '/wizard',
+    name: 'wizard',
+    component: Wizard,
+    meta: { layout: 'EmptyLayout' },
   },
   {
     path: '/search',
@@ -161,6 +223,13 @@ const routes = [
     component: Users,
     // meta: { layout: 'VerticalLayout' },
   },
+  {
+    path: '/license',
+    name: 'license',
+    component: License,
+    // meta: { layout: 'VerticalLayout' },
+  },
+
   {
     path: '/gallery',
     name: 'gallery',
@@ -203,14 +272,10 @@ const routes = [
     component: Tos,
   },
   {
-    path: '/typography',
-    name: 'typography',
-    component: Typography,
-  },
-  {
-    path: '/tabs',
-    name: 'tabs',
-    component: Tabs,
+    path: '/auth-lock',
+    name: 'auth-lock',
+    component: AuthLock,
+    meta: { layout: 'EmptyLayout' },
   },
   {
     path: '/ribbons',
@@ -239,7 +304,6 @@ const routes = [
     name: 'email',
     component: Email,
   },
-
   // Always leave this as last one,
   // but you can also remove it
   {

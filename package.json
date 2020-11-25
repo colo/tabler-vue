@@ -22,9 +22,13 @@
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
     "debug": "^4.2.0",
+    "flatpickr": "^4.6.6",
     "jquery": "^3.5.1",
     "jqvmap": "^1.5.1",
+    "masonry-layout": "^4.2.2",
+    "nouislider": "^14.6.3",
     "quasar": "^1.0.0",
+    "selectize": "^0.12.6",
     "vue-apexcharts": "^1.6.0",
     "vue-i18n": "^8.0.0",
     "vue-peity": "^0.5.0"

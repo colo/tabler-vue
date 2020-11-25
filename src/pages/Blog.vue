@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <div class="row row-deck">
+    <div class="row row-cards">
       <div class="col-sm-6 col-xl-4">
         <t-blog-card />
         <!-- <div class="card d-flex flex-column">
