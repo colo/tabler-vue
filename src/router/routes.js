@@ -169,7 +169,7 @@ const routes = [
     path: '/error500',
     component: Error,
     name: 'error500',
-    props: { number: 500, title: 'Oops… You just found an error page', subtitle: 'We are sorry but the page you are looking for was not found'},
+    props: { number: 500, title: 'Oops… You just found an error page', subtitle: 'We are sorry but our server encountered an internal error'},
     meta: { layout: 'EmptyLayout' },
   },
   /**
