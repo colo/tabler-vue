@@ -16,6 +16,7 @@ const navBarList = [
       { label: 'Buttons', to: {name: 'buttons'}},
       { label: 'Cards', to: {name: 'cards'}},
       { label: 'Cards Masonry', to: {name: 'cards-masonry'}},
+      { label: 'Colors', to: {name: 'colors'}},
       { label: 'Dropdowns', to: {name: 'dropdowns'}},
       { label: 'Icons', to: {name: 'icons'}},
       { label: 'Modals', to: {name: 'modals'}},

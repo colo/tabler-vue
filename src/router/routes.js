@@ -12,6 +12,7 @@ import Blank from 'pages/Blank.vue'
 import Buttons from 'pages/Buttons.vue'
 import Cards from 'pages/Cards.vue'
 import CardsMasonry from 'pages/CardsMasonry.vue'
+import Colors from 'pages/Colors.vue'
 import Dropdowns from 'pages/Dropdowns.vue'
 import Icons from 'pages/Icons.vue'
 import Modals from 'pages/Modals.vue'
@@ -85,6 +86,12 @@ const routes = [
     path: '/cards-masonry',
     name: 'cards-masonry',
     component: CardsMasonry,
+    // meta: { layout: 'VerticalLayout' },
+  },
+  {
+    path: '/colors',
+    name: 'colors',
+    component: Colors,
     // meta: { layout: 'VerticalLayout' },
   },
   {
